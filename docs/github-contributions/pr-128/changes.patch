@@ -1,0 +1,409 @@
+From c23f54059b2edab6d3790f89c26b6613e65b117f Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=EA=B9=80=EB=AF=BC=EA=B7=9C?= <kmg@MacBookAir.local>
+Date: Wed, 22 Jul 2026 20:16:10 +0900
+Subject: [PATCH 1/7] =?UTF-8?q?feat:=20=EA=B0=9C=EC=9D=B8=20=EC=B0=B8?=
+ =?UTF-8?q?=EA=B3=A0=EC=9E=90=EB=A3=8C=20=EC=A0=80=EC=9E=A5=20tool=20?=
+ =?UTF-8?q?=EA=B5=AC=ED=98=84?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+add_personal_reference_dict는 PersonalReferenceStore 저장 결과에서 backend와
+reference row를 분리해 dict로 정리하고, add_personal_reference tool은 그 결과를
+ok/tool_name과 함께 JSON 문자열로 반환한다.
+---
+ student_parts/week04_retrieve_nanas_memory.py | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+
+diff --git a/student_parts/week04_retrieve_nanas_memory.py b/student_parts/week04_retrieve_nanas_memory.py
+index e36a4231..00c6b256 100644
+--- a/student_parts/week04_retrieve_nanas_memory.py
++++ b/student_parts/week04_retrieve_nanas_memory.py
+@@ -225,8 +225,11 @@ def add_personal_reference_dict(
+ ) -> dict[str, Any]:
+     """개인 참고자료를 vector store에 추가하고 backend 정보를 반환합니다."""
+ 
+-    # TODO: PersonalReferenceStore.add_personal_reference(...)로 개인 참고자료를 저장하세요.
+-    ...
++    stored = reference_store.add_personal_reference(title, content, tags or [])
++    return {
++        "reference_backend": stored.get("backend"),
++        "reference": {key: value for key, value in stored.items() if key != "backend"},
++    }
+ 
+ 
+ def search_personal_reference_hits(
+@@ -284,8 +287,8 @@ def search_conversation_message_rows(
+ def add_personal_reference(title: str, content: str, tags: list[str] | None = None) -> str:
+     """개인 참고자료를 ChromaDB에 추가합니다."""
+ 
+-    # TODO: 개인 참고자료를 저장하고 JSON 문자열로 반환하세요.
+-    ...
++    result = add_personal_reference_dict(REFERENCE_STORE, title=title, content=content, tags=tags or [])
++    return json_payload({"ok": True, "tool_name": "add_personal_reference", **result})
+ 
+ 
+ @tool(args_schema=SearchPersonalReferencesInput)
+
+From 2116c33212724cbbbe14ecef7ad31e4ea74b9ef1 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=EA=B9=80=EB=AF=BC=EA=B7=9C?= <kmg@MacBookAir.local>
+Date: Wed, 22 Jul 2026 20:16:39 +0900
+Subject: [PATCH 2/7] =?UTF-8?q?feat:=20=EA=B0=9C=EC=9D=B8=20=EC=B0=B8?=
+ =?UTF-8?q?=EA=B3=A0=EC=9E=90=EB=A3=8C=20=EA=B2=80=EC=83=89=20tool=20?=
+ =?UTF-8?q?=EA=B5=AC=ED=98=84?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+search_personal_reference_hits는 ChromaDB 검색 결과를 id/content/distance/metadata
+구조로 정리하고, search_personal_references tool은 top_k를 safe_limit으로 보정한 뒤
+top-level hits 계약에 맞춰 JSON으로 반환한다.
+---
+ student_parts/week04_retrieve_nanas_memory.py | 16 ++++++++++++----
+ 1 file changed, 12 insertions(+), 4 deletions(-)
+
+diff --git a/student_parts/week04_retrieve_nanas_memory.py b/student_parts/week04_retrieve_nanas_memory.py
+index 00c6b256..bbac1219 100644
+--- a/student_parts/week04_retrieve_nanas_memory.py
++++ b/student_parts/week04_retrieve_nanas_memory.py
+@@ -240,8 +240,16 @@ def search_personal_reference_hits(
+ ) -> list[dict[str, Any]]:
+     """ChromaDB 검색 결과를 tool이 바로 반환하기 쉬운 hit 구조로 정리합니다."""
+ 
+-    # TODO: 개인 참고자료 검색 결과를 id/content/distance/metadata 구조로 정리하세요.
+-    ...
++    raw_hits = reference_store.search_personal_references(query, limit=top_k)
++    return [
++        {
++            "id": hit.get("id"),
++            "content": hit.get("content"),
++            "distance": hit.get("distance"),
++            "metadata": {"title": hit.get("title", ""), "tags": hit.get("tags", "")},
++        }
++        for hit in raw_hits
++    ]
+ 
+ 
+ def search_saved_request_rows(
+@@ -295,8 +303,8 @@ def add_personal_reference(title: str, content: str, tags: list[str] | None = No
+ def search_personal_references(query: str, top_k: int = 2) -> str:
+     """개인 참고자료를 ChromaDB와 OpenAI embedding 기반으로 검색합니다."""
+ 
+-    # TODO: query/top_k로 개인 참고자료 vector store를 검색하고 top-level hits를 반환하세요.
+-    ...
++    hits = search_personal_reference_hits(REFERENCE_STORE, query=query, top_k=safe_limit(top_k, default=2, maximum=20))
++    return json_payload({"ok": True, "tool_name": "search_personal_references", "hits": hits})
+ 
+ 
+ @tool(args_schema=SearchSavedRequestsInput)
+
+From 630674b20be367dd379d2018d21b2c4913712ea9 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=EA=B9=80=EB=AF=BC=EA=B7=9C?= <kmg@MacBookAir.local>
+Date: Wed, 22 Jul 2026 20:17:05 +0900
+Subject: [PATCH 3/7] =?UTF-8?q?feat:=20=EC=A0=80=EC=9E=A5=20=EC=9D=BC?=
+ =?UTF-8?q?=EC=A0=95=20=EA=B2=80=EC=83=89=20tool=20=EA=B5=AC=ED=98=84?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+search_saved_request_rows는 AppSQLiteStore.search_saved_requests를 키워드 인자로
+호출해 검색 결과 rows를 그대로 반환하고(결과 없으면 빈 리스트),
+search_saved_requests tool은 top_k를 보정한 뒤 top-level rows 계약으로 반환한다.
+---
+ student_parts/week04_retrieve_nanas_memory.py | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/student_parts/week04_retrieve_nanas_memory.py b/student_parts/week04_retrieve_nanas_memory.py
+index bbac1219..43d98dd6 100644
+--- a/student_parts/week04_retrieve_nanas_memory.py
++++ b/student_parts/week04_retrieve_nanas_memory.py
+@@ -260,8 +260,7 @@ def search_saved_request_rows(
+ ) -> list[dict[str, Any]]:
+     """SQLite 저장 요청을 검색하고 실제 검색 결과만 반환합니다."""
+ 
+-    # TODO: AppSQLiteStore.search_saved_requests(...)로 저장 요청을 검색하세요.
+-    ...
++    return sqlite_store.search_saved_requests(query, limit=top_k)
+ 
+ 
+ def search_conversation_messages_dict(
+@@ -311,8 +310,8 @@ def search_personal_references(query: str, top_k: int = 2) -> str:
+ def search_saved_requests(query: str, top_k: int = 3) -> str:
+     """SQLite에 저장된 구조화 일정/할 일/알림 row를 검색합니다. query에는 LLM이 고른 일정/할 일/알림 핵심어를 넣습니다."""
+ 
+-    # TODO: AppSQLiteStore.search_saved_requests(...)로 저장 요청을 검색하고 top-level rows를 반환하세요.
+-    ...
++    rows = search_saved_request_rows(SQLITE_STORE, query=query, top_k=safe_limit(top_k, default=3, maximum=50))
++    return json_payload({"ok": True, "tool_name": "search_saved_requests", "rows": rows})
+ 
+ 
+ @tool(args_schema=SearchConversationMessagesInput)
+
+From adefd3b9e01e3a45becbabbe553eeed889b3697c Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=EA=B9=80=EB=AF=BC=EA=B7=9C?= <kmg@MacBookAir.local>
+Date: Wed, 22 Jul 2026 20:20:01 +0900
+Subject: [PATCH 4/7] =?UTF-8?q?feat:=20week4=20=EB=9D=BC=EC=9A=B0=ED=8C=85?=
+ =?UTF-8?q?=C2=B7=ED=95=A0=EB=A3=A8=EC=8B=9C=EB=84=A4=EC=9D=B4=EC=85=98=20?=
+ =?UTF-8?q?=EB=B0=A9=EC=96=B4=20system=20prompt=20=EC=B6=94=EA=B0=80?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+메모성 입력은 add_personal_reference로 저장하고, 조회 질문은 출처에 따라
+search_personal_references(메모) 또는 search_saved_requests(일정)를 쓰도록 라우팅한다.
+또한 검색 결과가 없으면 지어내지 말고, 저장된 내용만 근거로 답하도록 방어 지시를 넣었다.
+---
+ student_parts/week04_retrieve_nanas_memory.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/student_parts/week04_retrieve_nanas_memory.py b/student_parts/week04_retrieve_nanas_memory.py
+index 43d98dd6..5dd7a05f 100644
+--- a/student_parts/week04_retrieve_nanas_memory.py
++++ b/student_parts/week04_retrieve_nanas_memory.py
+@@ -363,6 +363,12 @@ def week04_prompt_parts() -> list[str]:
+     return [
+         *week03_prompt_parts(),
+         # TODO: Week 4 Nana memory agent system prompt를 자유롭게 추가하세요.
++        "사용자가 일정/할 일/알림이 아닌 정보(메모·비밀번호·연락처·팁 등 자유 텍스트)를 "
++        "'기억해줘/메모해줘' 하면 add_personal_reference로 개인 참고자료에 저장한다.",
++        "저장한 정보를 다시 물으면 검색 tool을 쓴다. 메모/참고자료 질문은 search_personal_references, "
++        "저장된 일정/할 일/알림 질문은 search_saved_requests를 사용한다.",
++        "검색 결과가 비어 있으면 정보를 지어내지 말고 저장된 내용이 없다고 답한다. "
++        "답변은 검색된 메모에 실제로 적힌 내용만 근거로 삼고, 저장되지 않은 사실을 임의로 단정하지 않는다.",
+     ]
+ 
+ 
+
+From 41c74c066226a159794793ed80aab438dd3afea7 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=EA=B9=80=EB=AF=BC=EA=B7=9C?= <kmg@MacBookAir.local>
+Date: Wed, 22 Jul 2026 20:20:24 +0900
+Subject: [PATCH 5/7] =?UTF-8?q?style:=20week4=20=ED=8C=8C=EC=9D=BC?=
+ =?UTF-8?q?=EC=97=90=20black=C2=B7isort=20=EC=A0=81=EC=9A=A9?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+3주차 리뷰에서 안내받은 대로 이번 주차부터 포맷을 도구로 통일한다.
+로직 변경 없이 import 정렬과 코드 포맷만 자동화 도구로 정리했다.
+---
+ student_parts/week04_retrieve_nanas_memory.py | 30 +++++++++++++------
+ 1 file changed, 21 insertions(+), 9 deletions(-)
+
+diff --git a/student_parts/week04_retrieve_nanas_memory.py b/student_parts/week04_retrieve_nanas_memory.py
+index 5dd7a05f..c1fb4750 100644
+--- a/student_parts/week04_retrieve_nanas_memory.py
++++ b/student_parts/week04_retrieve_nanas_memory.py
+@@ -7,17 +7,16 @@
+ from langchain_core.tools import tool
+ from pydantic import BaseModel, Field
+ 
++from fixed.app_store import AppSQLiteStore
+ from fixed.config import CONFIG
+ from fixed.conversation_rag_store import ConversationRAGStore
+ from fixed.llm import chat_model
+-from fixed.runtime_clock import current_app_date_iso
+-from fixed.app_store import AppSQLiteStore
+ from fixed.reference_store import PersonalReferenceStore
++from fixed.runtime_clock import current_app_date_iso
+ from fixed.session_scope import DEFAULT_SESSION_SCOPE, current_session_scope
+ from student_parts.week01_wake_up_nana import join_system_prompt
+ from student_parts.week03_build_nanas_logbook import week03_prompt_parts, week03_tools
+ 
+-
+ REFERENCE_STORE = PersonalReferenceStore(CONFIG.chroma_dir)
+ SQLITE_STORE = AppSQLiteStore(CONFIG.app_db_path)
+ CONVERSATION_RAG_STORE = ConversationRAGStore(CONFIG.chroma_dir)
+@@ -291,10 +290,14 @@ def search_conversation_message_rows(
+ 
+ 
+ @tool(args_schema=AddPersonalReferenceInput)
+-def add_personal_reference(title: str, content: str, tags: list[str] | None = None) -> str:
++def add_personal_reference(
++    title: str, content: str, tags: list[str] | None = None
++) -> str:
+     """개인 참고자료를 ChromaDB에 추가합니다."""
+ 
+-    result = add_personal_reference_dict(REFERENCE_STORE, title=title, content=content, tags=tags or [])
++    result = add_personal_reference_dict(
++        REFERENCE_STORE, title=title, content=content, tags=tags or []
++    )
+     return json_payload({"ok": True, "tool_name": "add_personal_reference", **result})
+ 
+ 
+@@ -302,16 +305,24 @@ def add_personal_reference(title: str, content: str, tags: list[str] | None = No
+ def search_personal_references(query: str, top_k: int = 2) -> str:
+     """개인 참고자료를 ChromaDB와 OpenAI embedding 기반으로 검색합니다."""
+ 
+-    hits = search_personal_reference_hits(REFERENCE_STORE, query=query, top_k=safe_limit(top_k, default=2, maximum=20))
+-    return json_payload({"ok": True, "tool_name": "search_personal_references", "hits": hits})
++    hits = search_personal_reference_hits(
++        REFERENCE_STORE, query=query, top_k=safe_limit(top_k, default=2, maximum=20)
++    )
++    return json_payload(
++        {"ok": True, "tool_name": "search_personal_references", "hits": hits}
++    )
+ 
+ 
+ @tool(args_schema=SearchSavedRequestsInput)
+ def search_saved_requests(query: str, top_k: int = 3) -> str:
+     """SQLite에 저장된 구조화 일정/할 일/알림 row를 검색합니다. query에는 LLM이 고른 일정/할 일/알림 핵심어를 넣습니다."""
+ 
+-    rows = search_saved_request_rows(SQLITE_STORE, query=query, top_k=safe_limit(top_k, default=3, maximum=50))
+-    return json_payload({"ok": True, "tool_name": "search_saved_requests", "rows": rows})
++    rows = search_saved_request_rows(
++        SQLITE_STORE, query=query, top_k=safe_limit(top_k, default=3, maximum=50)
++    )
++    return json_payload(
++        {"ok": True, "tool_name": "search_saved_requests", "rows": rows}
++    )
+ 
+ 
+ @tool(args_schema=SearchConversationMessagesInput)
+@@ -339,6 +350,7 @@ def search_nana_memory(
+     # TODO: compatibility 통합 검색이 필요하면 개인 참고자료와 SQLite 일정 chunk를 함께 구성하세요.
+     ...
+ 
++
+ def week04_tools() -> list[Any]:
+     """3주차까지의 도구에 4주차 RAG 도구를 누적한 목록입니다."""
+ 
+
+From 5c5edcf9a70fc6f0027fad5ae59d67d44328ce01 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=EA=B9=80=EB=AF=BC=EA=B7=9C?= <kmg@MacBookAir.local>
+Date: Wed, 22 Jul 2026 20:20:50 +0900
+Subject: [PATCH 6/7] =?UTF-8?q?test:=20week4=20=EA=B2=80=EC=83=89=20tool?=
+ =?UTF-8?q?=20=EA=B8=B0=EB=B3=B8=20=EB=8F=99=EC=9E=91=20pytest=20=EC=B6=94?=
+ =?UTF-8?q?=EA=B0=80?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+safe_limit의 범위 보정과 search_saved_requests의 반환 계약(top-level rows)을 검증한다.
+외부 임베딩 API가 필요 없는 부분만 테스트해 네트워크 없이도 안정적으로 통과하도록 했다.
+conftest.py는 pytest가 프로젝트 루트를 import 경로에 포함하도록 한다.
+---
+ conftest.py          |  8 ++++++++
+ tests/test_week04.py | 33 +++++++++++++++++++++++++++++++++
+ 2 files changed, 41 insertions(+)
+ create mode 100644 conftest.py
+ create mode 100644 tests/test_week04.py
+
+diff --git a/conftest.py b/conftest.py
+new file mode 100644
+index 00000000..89eb49eb
+--- /dev/null
++++ b/conftest.py
+@@ -0,0 +1,8 @@
++"""pytest가 프로젝트 루트를 import 경로에 포함하도록 합니다."""
++
++import sys
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parent
++if str(ROOT) not in sys.path:
++    sys.path.insert(0, str(ROOT))
+diff --git a/tests/test_week04.py b/tests/test_week04.py
+new file mode 100644
+index 00000000..7d8e5ea3
+--- /dev/null
++++ b/tests/test_week04.py
+@@ -0,0 +1,33 @@
++"""Week 4 검색 tool 기본 동작 테스트.
++
++외부 임베딩 API가 필요 없는 부분(safe_limit 보정, SQLite 검색 계약)만 검증한다.
++실행: uv run pytest tests/test_week04.py
++"""
++
++import json
++
++from student_parts.week04_retrieve_nanas_memory import safe_limit, search_saved_requests
++
++
++def test_safe_limit_clamps_range():
++    # 0 이하는 1로, 상한을 넘으면 maximum으로, 문자열 숫자는 int로 보정된다.
++    assert safe_limit(0) == 1
++    assert safe_limit(-5) == 1
++    assert safe_limit(999, maximum=50) == 50
++    assert safe_limit("3") == 3
++
++
++def test_safe_limit_uses_default_on_invalid():
++    # 숫자로 못 바꾸는 값은 default를 사용한다.
++    assert safe_limit(None, default=5) == 5
++    assert safe_limit("abc", default=7) == 7
++
++
++def test_search_saved_requests_contract():
++    # 결과가 없어도 예외 없이 top-level rows(list) 계약을 지킨다.
++    payload = json.loads(
++        search_saved_requests.invoke({"query": "존재하지않는검색어zzz", "top_k": 3})
++    )
++    assert payload["ok"] is True
++    assert payload["tool_name"] == "search_saved_requests"
++    assert isinstance(payload["rows"], list)
+
+From 09f8b0cb399845265eae610cb5aac2c99c2e9a5c Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=EA=B9=80=EB=AF=BC=EA=B7=9C?= <kmg@MacBookAir.local>
+Date: Wed, 22 Jul 2026 20:21:03 +0900
+Subject: [PATCH 7/7] =?UTF-8?q?docs:=20week4=20=ED=95=99=EC=8A=B5=20?=
+ =?UTF-8?q?=EC=A0=95=EB=A6=AC=20=EB=B0=8F=20RAG=20=ED=95=A0=EB=A3=A8?=
+ =?UTF-8?q?=EC=8B=9C=EB=84=A4=EC=9D=B4=EC=85=98=20=EA=B4=80=EC=B0=B0=20?=
+ =?UTF-8?q?=EC=B6=94=EA=B0=80?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+출처별 검색 tool 분리, 벡터DB/임베딩의 역할, 라우팅을 프롬프트로 정한 이유를 정리했다.
+또한 용도가 뭉개진 메모에서 발생한 RAG 할루시네이션 재현과, 프롬프트 방어가
+"검색 0건"은 막지만 "부분 일치"는 못 막는 한계를 기록했다.
+---
+ docs/week04.md | 40 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
+ create mode 100644 docs/week04.md
+
+diff --git a/docs/week04.md b/docs/week04.md
+new file mode 100644
+index 00000000..4b13668f
+--- /dev/null
++++ b/docs/week04.md
+@@ -0,0 +1,40 @@
++# Week 4 — 나나의 기억 검색 (retrieve nana's memory)
++
++## 이번 주 목표
++3주차까지 저장한 기억을 **출처별로 검색**해서 답변에 쓰게 한다. 핵심 메시지는 "RAG를 하나의 마법 함수로 보지 말고, 데이터 출처마다 검색 tool을 분리하라"는 것이다.
++
++## 검색 출처 3종류 (기본은 앞 2개)
++| tool | 대상 | 방식 |
++|------|------|------|
++| `search_personal_references` | 내가 적어둔 메모/참고자료 | ChromaDB 벡터 검색 (RAG) |
++| `search_saved_requests` | 저장된 일정/할 일/알림 | SQLite 텍스트 조회 |
++| `search_conversation_messages` (심화) | 과거 대화 발화 | ChromaDB, lazy sync |
++
++## 배운 것
++
++### 1. 모든 검색이 RAG는 아니다
++일정 검색(`search_saved_requests`)은 SQLite 텍스트 조회이고, 참고자료 검색만 벡터 기반 RAG다. 정확한 값(날짜·이름)은 DB 조회가, 의미가 비슷한 자유 텍스트는 벡터 검색이 강하다. 출처 성격에 맞는 방식을 고르는 게 이번 과제의 핵심이었다.
++
++### 2. 벡터DB는 만드는 게 아니라 갖다 쓴다
++임베딩(텍스트→벡터)은 OpenAI 임베딩 API가, 저장·거리 계산은 ChromaDB가 담당한다. 내가 짠 tool은 store를 부르고 결과를 `json_payload`로 감싸는 얇은 입구다. 반환 키 계약(참고자료=`hits`, 일정=`rows`)을 지키는 게 중요했다.
++
++### 3. 저장/검색 라우팅은 LLM이 프롬프트로 판단한다
++사용자 입력이 일정인지 메모인지, 어느 저장소를 검색할지는 코드가 아니라 LLM이 프롬프트를 보고 고른다. 그래서 라우팅 기준을 프롬프트에 명확히 적어야 한다. 나는 "일정이 아니면 무조건 메모"가 아니라 "사용자가 기억/메모 의도를 밝혔을 때만 참고자료로 저장"하도록 정했다. 잡담까지 저장소에 쌓이는 것을 피하기 위해서다.
++
++## 직접 확인한 한계 — RAG 할루시네이션
++검색 관련성 판단이 코드가 아니라 LLM/프롬프트에 의존하다 보니, 결과가 일관되지 않았다.
++
++- 저장한 것: `비밀번호 = 4590` (용도 미지정)
++- 질문: "내가 저장한 현관 도어락 비번 뭐였지?"
++- 답변: "저장된 현관 도어락 비밀번호는 4590입니다" ← "현관 도어락"은 저장한 적 없는데 단정 (할루시네이션)
++
++반면 "이대리 연락처?"(김/박대리와 이름이 명확히 다름), "내 생일?"(되물음)은 잘 방어됐다. 같은 구조인데 라벨이 뭉개지면 단정하고 명확하면 방어한다.
++
++방어 프롬프트("검색 결과가 없으면 지어내지 말고, 저장된 내용만 근거로 삼는다")를 추가하니 "검색 0건"은 막혔지만, 위 "현관 도어락"처럼 "관련은 있으나 질문과 정확히 일치하지 않는" 경우는 강한 문구를 넣어도 막지 못했다.
++
++**결론**: 프롬프트 방어는 "검색 0건"에는 효과가 있지만 "애매한 부분 일치"에는 보장이 안 된다. 이 경계를 확실히 하려면 코드 단의 distance threshold, re-ranking, hybrid search 같은 보완이 필요하다. 이번 과제는 agentic RAG의 기초(LLM이 출처별 tool을 고르는 것)까지가 범위라, 프롬프트 방어를 불완전한 대안으로 두었다.
++
++## 3주차 리뷰 반영
++- `black` / `isort` 적용 (이번 주차부터 포맷 자동화)
++- `pytest`로 safe_limit 보정·검색 계약 테스트 추가 (`tests/test_week04.py`)
++- Conventional Commit + 기능 단위 커밋 분리

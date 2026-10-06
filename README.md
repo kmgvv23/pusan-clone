@@ -1,3 +1,13 @@
+# @kmgvv23 기여 보관본
+
+[기여 기록과 리뷰·댓글 보관본](CONTRIBUTIONS.md) · [원본 저장소](https://github.com/kakaotechcampus-4/pusan-clone)
+
+작성 PR **7개** · 제출 리뷰 **11개** · 코드 리뷰 댓글 **11개** · PR 대화 댓글 **5개**
+
+이 브랜치는 `kimmingyu/final`의 코드와 커밋 이력을 보존하고, PR·리뷰 기록을 문서로 추가한 개인 Fork입니다. 원래 PR 이벤트와 작성자·날짜는 보관 문서와 원본 링크에서 확인할 수 있습니다.
+
+---
+
 # Kanana Schedule Agent
 
 Kanana 강의용 일정 Agent 실습 프로젝트의 Week 1 main 브랜치입니다. 학생들은 `student_parts/week01_wake_up_nana.py`를 열고, 파일 상단의 `[수강생 구현 가이드]`가 지정한 함수와 tool 본문을 직접 완성합니다.

@@ -1,0 +1,44 @@
+[
+  {
+    "sha": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "node_id": "C_kwDOSoTVOdoAKDg3N2JhNDZiZTNiMWRhMWU1NWVhZWVkNjM1MzdmODJmN2FlMTIyMmQ",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-06-30T08:25:45Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-06-30T08:25:45Z"
+      },
+      "message": "week1: 개인 일정 CRUD tool 구현",
+      "tree": {
+        "sha": "dedf093ff76bbf2d6bbf8baa2b2bceafb45d76ed",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/dedf093ff76bbf2d6bbf8baa2b2bceafb45d76ed"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/877ba46be3b1da1e55eaeed63537f82f7ae1222d/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "0e292e3f529aa08e45bea763860f8f1e66002472",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/0e292e3f529aa08e45bea763860f8f1e66002472",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/0e292e3f529aa08e45bea763860f8f1e66002472"
+      }
+    ]
+  }
+]

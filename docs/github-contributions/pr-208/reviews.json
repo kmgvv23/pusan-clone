@@ -1,0 +1,202 @@
+[
+  {
+    "id": 4875685977,
+    "node_id": "PRR_kwDOSoTVOc8AAAABIp0QWQ",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "week6 1차 리뷰입니다. 메인과 심화를 모두 구현하셨습니다. tool description을 `fixed/schedule_decision.py`가 실제로 후보를 버리는 조건 네 개에 맞춰 쓰신 것을 확인했습니다.\n\n필수 수정은 한 가지입니다. 물려받은 이전 주차 프롬프트에 이번 주차와 반대되는 지시가 남아 있습니다. 나머지 인라인 두 개는 참고입니다. 반영해 주시면 확인 후 승인드리겠습니다.\n\n---\n\n## 질문 세 개 답변\n\n**1) 어디까지 룰 베이스로 하고, 어디부터 LLM에 맡길지**\n\n**기준은 \"정답이 입력만으로 정해지는가\" 하나입니다.** 같은 입력에 항상 같은 답이 나오고 그 답을 규칙으로 적을 수 있으면 코드입니다. 시간이 겹치는지 계산하는 일이 그렇습니다. 반대로 답이 맥락에 따라 달라지고 규칙으로 적으면 예외가 계속 붙는다면 LLM입니다.\n\n에이전트를 나누는 기준도 같습니다. 한 프롬프트 안에서 규칙이 부딪히거나, tool이 많아져 모델이 엉뚱한 것을 고르기 시작하면 나눕니다.\n\n대신 대가가 있습니다. 위임을 한 번 거칠 때마다 LLM 호출이 늘고, 앞에서 알던 것이 뒤로 전달되지 않습니다. Kana가 오늘 날짜를 모르던 문제가 그것입니다. 그래서 하나로 만들어 보고, 프롬프트가 싸우기 시작하면 자르는 순서로 갑니다.\n\n---\n\n**2) 프롬프트로 어디까지 제어하는 것이 적절한가**\n\n**프롬프트가 긴 것 자체는 문제가 아닙니다.** 문제는 같은 규칙을 여러 곳에 나눠 적는 것입니다. 그러면 나중에 어느 문장이 지금 동작을 만드는지 알 수 없게 됩니다.\n\n\"안 지켜져서 문장을 더 세게 쓴다\"가 반복되면, 프롬프트를 더 쓸 게 아니라 형식이나 코드로 옮길 신호입니다. 프롬프트는 확률을 높이는 수단이지 보장이 아니라서, description에 계약을 적어도 안 지켜지는 게 정상입니다.\n\n옮길 곳이 형식일 때도 있고 코드일 때도 있습니다. `final_slot`의 `'YYYY-MM-DD HH:MM-HH:MM'` 형식은 지금 description에 말로 적혀 있는데, 이런 건 스키마에 정규식을 걸면 형식이 어긋난 값이 tool에 들어오기 전에 걸립니다.\n\n---\n\n**3) 확률 기반 모델을 어디까지 신뢰할 수 있게 만드나**\n\n**100%는 안 됩니다.** 대신 \"얼마나 자주 맞는지\"를 숫자로 만들어 관리합니다. 목표를 100%로 잡는 대신, 틀렸을 때 손해가 큰 자리에는 코드 검증을 세우고 나머지는 통과율로 지켜보는 식입니다.\n\n정확도를 올리는 기법은 대체로 모델이 고를 수 있는 선택지를 줄이는 쪽입니다. temperature를 낮추고, 출력 형식을 고정하고, tool 수와 분기를 줄이고, 판단 기준을 프롬프트에 예시로 보여줍니다.\n\n매번 달라지는 부분은 통과 여부가 아니라 통과율로 봅니다. supervisor를 실제로 호출해 어느 하위 에이전트가 선택됐는지, tool이 어떤 순서로 불렸는지 확인하는 테스트를 만들고, 그 테스트만 여러 번 돌려 20회 중 몇 번 통과하는지 기록합니다. 그 숫자를 남겨 두면 프롬프트를 고친 뒤 떨어졌는지로 회귀를 잡을 수 있습니다.\n\n**신뢰도는 모델을 믿을 만하게 만들어서 얻는 게 아니라, 틀린 출력이 통과하지 못하게 만들어서 얻습니다.**",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#pullrequestreview-4875685977",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#pullrequestreview-4875685977"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208"
+      }
+    },
+    "submitted_at": "2026-08-06T14:34:18Z",
+    "commit_id": "12ad05a158530faebd44d87f6296f9252c6c27c9"
+  },
+  {
+    "id": 4890749569,
+    "node_id": "PRR_kwDOSoTVOc8AAAABI4LqgQ",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#pullrequestreview-4890749569",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#pullrequestreview-4890749569"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208"
+      }
+    },
+    "submitted_at": "2026-08-09T07:11:42Z",
+    "commit_id": "12ad05a158530faebd44d87f6296f9252c6c27c9"
+  },
+  {
+    "id": 4890790545,
+    "node_id": "PRR_kwDOSoTVOc8AAAABI4OKkQ",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#pullrequestreview-4890790545",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#pullrequestreview-4890790545"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208"
+      }
+    },
+    "submitted_at": "2026-08-09T07:37:49Z",
+    "commit_id": "12ad05a158530faebd44d87f6296f9252c6c27c9"
+  },
+  {
+    "id": 4890792193,
+    "node_id": "PRR_kwDOSoTVOc8AAAABI4ORAQ",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#pullrequestreview-4890792193",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#pullrequestreview-4890792193"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208"
+      }
+    },
+    "submitted_at": "2026-08-09T07:39:04Z",
+    "commit_id": "3d665aebeeb8b891cffef2579ae7fe24b4325494"
+  },
+  {
+    "id": 4896422473,
+    "node_id": "PRR_kwDOSoTVOc8AAAABI9l6SQ",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "반영 확인했습니다. 승인합니다.\n\n추가하신 두 줄(209-210행) 덕분에 supervisor가 week5에서 물려받은 \"확정은 이번 주차 범위가 아니다\"를 더 이상 따르지 않습니다.\n\n6주차까지 수고 많으셨습니다.",
+    "state": "APPROVED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#pullrequestreview-4896422473",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#pullrequestreview-4896422473"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208"
+      }
+    },
+    "submitted_at": "2026-08-10T12:24:51Z",
+    "commit_id": "3d665aebeeb8b891cffef2579ae7fe24b4325494"
+  }
+]

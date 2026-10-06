@@ -1,0 +1,128 @@
+[
+  {
+    "sha": "65fbcfb152952bc4d4ba2df53d39d91af8e3fb32",
+    "node_id": "C_kwDOSoTVOdoAKDY1ZmJjZmIxNTI5NTJiYzRkNGJhMmRmNTNkMzlkOTFhZjhlM2ZiMzI",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-08T10:07:04Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-08T10:07:04Z"
+      },
+      "message": "chore: week2 강의자료 최신화 (신규 파일 + 프레임워크 반영, week01 내 구현 유지)",
+      "tree": {
+        "sha": "bfcd60dc973564e188251b3a9ba4234320055dbe",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/bfcd60dc973564e188251b3a9ba4234320055dbe"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/65fbcfb152952bc4d4ba2df53d39d91af8e3fb32",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/65fbcfb152952bc4d4ba2df53d39d91af8e3fb32",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/65fbcfb152952bc4d4ba2df53d39d91af8e3fb32",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/65fbcfb152952bc4d4ba2df53d39d91af8e3fb32/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "ee7529ab362a6e957f96c1aa7e8a754f0a907bbe",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/ee7529ab362a6e957f96c1aa7e8a754f0a907bbe",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/ee7529ab362a6e957f96c1aa7e8a754f0a907bbe"
+      }
+    ]
+  },
+  {
+    "sha": "b09560a9cb88ad0500be3954edc569b15a51d575",
+    "node_id": "C_kwDOSoTVOdoAKGIwOTU2MGE5Y2I4OGFkMDUwMGJlMzk1NGVkYzU2OWIxNWE1MWQ1NzU",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-08T11:07:54Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-08T11:07:54Z"
+      },
+      "message": "week2: 자연어 요청 구조화 tool 구현",
+      "tree": {
+        "sha": "9a2ece1a0c536c9be695a521bc5f88b5c60531fa",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/9a2ece1a0c536c9be695a521bc5f88b5c60531fa"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/b09560a9cb88ad0500be3954edc569b15a51d575",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/b09560a9cb88ad0500be3954edc569b15a51d575",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/b09560a9cb88ad0500be3954edc569b15a51d575",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/b09560a9cb88ad0500be3954edc569b15a51d575/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "65fbcfb152952bc4d4ba2df53d39d91af8e3fb32",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/65fbcfb152952bc4d4ba2df53d39d91af8e3fb32",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/65fbcfb152952bc4d4ba2df53d39d91af8e3fb32"
+      }
+    ]
+  },
+  {
+    "sha": "c456097a242a3fe4a24d2c1732449b666453ca5b",
+    "node_id": "C_kwDOSoTVOdoAKGM0NTYwOTdhMjQyYTNmZTRhMjRkMmMxNzMyNDQ5YjY2NjQ1M2NhNWI",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-10T09:16:44Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-10T09:16:44Z"
+      },
+      "message": "week2: kind 분류 기준 추가 및 attendees→members 매핑 명시",
+      "tree": {
+        "sha": "e10d5f77a063fb55a6a38b1d2d6b076409c8efc2",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/e10d5f77a063fb55a6a38b1d2d6b076409c8efc2"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/c456097a242a3fe4a24d2c1732449b666453ca5b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/c456097a242a3fe4a24d2c1732449b666453ca5b",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/c456097a242a3fe4a24d2c1732449b666453ca5b",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/c456097a242a3fe4a24d2c1732449b666453ca5b/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "b09560a9cb88ad0500be3954edc569b15a51d575",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/b09560a9cb88ad0500be3954edc569b15a51d575",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/b09560a9cb88ad0500be3954edc569b15a51d575"
+      }
+    ]
+  }
+]

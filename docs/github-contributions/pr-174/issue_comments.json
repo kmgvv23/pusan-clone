@@ -1,0 +1,48 @@
+[
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/issues/comments/5156180639",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#issuecomment-5156180639",
+    "issue_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/issues/174",
+    "id": 5156180639,
+    "node_id": "IC_kwDOSoTVOc8AAAABM1USnw",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2026-08-02T07:22:41Z",
+    "updated_at": "2026-08-02T07:22:41Z",
+    "body": "멘토님 안녕하세요! 수정이 늦어져서 죄송합니다... 완전 잊고 있었습니다...\r\n먼저, 바쁘실텐데 꼼꼼하게 리뷰해주셔서 정말 감사합니다!\r\n그리고 코드, PR 본문, 주석을 과제하는 도중 지속 수정하다가 이렇게 안맞는 부분이 많이 발생한 것 같습니다. 확인하고 냈어야하는데 기본적인 실수들이 많은 것 같아 죄송하네요...\r\n주신 피드백 기반으로 수정해봤습니다! 마지막주에는 빠릿빠릿하고 꼼꼼히 확인 후 제출하겠습니다",
+    "author_association": "MEMBER",
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/issues/comments/5156180639/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+]

@@ -1,0 +1,418 @@
+[
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3500736345",
+    "pull_request_review_id": 4602749614,
+    "id": 3500736345,
+    "node_id": "PRRC_kwDOSoTVOc7QqP9Z",
+    "diff_hunk": "@@ -170,24 +170,50 @@ def personal_create_schedule(\n ) -> str:\n     \"\"\"Nana의 개인 일정을 현재 대화의 임시 메모리에 생성합니다.\"\"\"",
+    "path": "student_parts/week01_wake_up_nana.py",
+    "commit_id": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "original_commit_id": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "user": {
+      "login": "Gongmeda",
+      "id": 25472942,
+      "node_id": "MDQ6VXNlcjI1NDcyOTQy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25472942?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Gongmeda",
+      "html_url": "https://github.com/Gongmeda",
+      "followers_url": "https://api.github.com/users/Gongmeda/followers",
+      "following_url": "https://api.github.com/users/Gongmeda/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Gongmeda/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Gongmeda/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Gongmeda/subscriptions",
+      "organizations_url": "https://api.github.com/users/Gongmeda/orgs",
+      "repos_url": "https://api.github.com/users/Gongmeda/repos",
+      "events_url": "https://api.github.com/users/Gongmeda/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Gongmeda/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "이 구조에서는 툴의 docstring이 실제 agent가 보는 tool description으로 쓰이는데요.\n현재 함수명과 인자명만으로도 기본 흐름은 읽히지만, `date` 형식, `date_from/date_to` 의미 등을 agent가 명확히 알기 어렵습니다.\n툴 설명에 “언제 호출하는지 / 인자 형식 / 반환값을 어떻게 해석해야 하는지”를 조금 더 넣으면 tool 선택과 해석이 더 안정적일 것 같습니다!",
+    "created_at": "2026-06-30T17:38:59Z",
+    "updated_at": "2026-06-30T17:47:13Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/27#discussion_r3500736345",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/27",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3500736345"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/27#discussion_r3500736345"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/27"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3500736345/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 171,
+    "original_line": 171,
+    "side": "RIGHT",
+    "author_association": "MEMBER",
+    "original_position": 2,
+    "position": 2,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3500755975",
+    "pull_request_review_id": 4602749614,
+    "id": 3500755975,
+    "node_id": "PRRC_kwDOSoTVOc7QqUwH",
+    "diff_hunk": "@@ -206,7 +232,11 @@ def week01_prompt_parts() -> list[str]:\n     \"\"\"1주차부터 누적되는 system prompt 조각입니다.\"\"\"\n \n     return [\n-        # TODO: Week 1 Nana 일정 agent system prompt를 자유롭게 추가하세요.\n+        f\"\"\"당신은 개인 일정 관리를 도와주는 어시스턴트 Nana입니다.\n+오늘 날짜는 {current_app_date_iso()} 입니다.",
+    "path": "student_parts/week01_wake_up_nana.py",
+    "commit_id": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "original_commit_id": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "user": {
+      "login": "Gongmeda",
+      "id": 25472942,
+      "node_id": "MDQ6VXNlcjI1NDcyOTQy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25472942?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Gongmeda",
+      "html_url": "https://github.com/Gongmeda",
+      "followers_url": "https://api.github.com/users/Gongmeda/followers",
+      "following_url": "https://api.github.com/users/Gongmeda/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Gongmeda/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Gongmeda/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Gongmeda/subscriptions",
+      "organizations_url": "https://api.github.com/users/Gongmeda/orgs",
+      "repos_url": "https://api.github.com/users/Gongmeda/repos",
+      "events_url": "https://api.github.com/users/Gongmeda/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Gongmeda/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "오늘 날짜를 계산하여 시스템 프롬프트에 넣어서 에이전트가 참고할 수 있게 하셨군요! 👍",
+    "created_at": "2026-06-30T17:42:22Z",
+    "updated_at": "2026-06-30T17:47:13Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/27#discussion_r3500755975",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/27",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3500755975"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/27#discussion_r3500755975"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/27"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3500755975/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 236,
+    "original_line": 236,
+    "side": "RIGHT",
+    "author_association": "MEMBER",
+    "original_position": 63,
+    "position": 63,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3500759907",
+    "pull_request_review_id": 4602749614,
+    "id": 3500759907,
+    "node_id": "PRRC_kwDOSoTVOc7QqVtj",
+    "diff_hunk": "@@ -206,7 +232,11 @@ def week01_prompt_parts() -> list[str]:\n     \"\"\"1주차부터 누적되는 system prompt 조각입니다.\"\"\"\n \n     return [\n-        # TODO: Week 1 Nana 일정 agent system prompt를 자유롭게 추가하세요.\n+        f\"\"\"당신은 개인 일정 관리를 도와주는 어시스턴트 Nana입니다.\n+오늘 날짜는 {current_app_date_iso()} 입니다.\n+\n+일정 관련 요청이 오면 적절한 tool을 사용해서 처리하고, 결과를 자연스러운 한국어로 답해주세요.\n+날짜나 시간 정보가 부족하면 사용자에게 물어보세요.\"\"\",",
+    "path": "student_parts/week01_wake_up_nana.py",
+    "commit_id": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "original_commit_id": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "user": {
+      "login": "Gongmeda",
+      "id": 25472942,
+      "node_id": "MDQ6VXNlcjI1NDcyOTQy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25472942?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Gongmeda",
+      "html_url": "https://github.com/Gongmeda",
+      "followers_url": "https://api.github.com/users/Gongmeda/followers",
+      "following_url": "https://api.github.com/users/Gongmeda/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Gongmeda/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Gongmeda/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Gongmeda/subscriptions",
+      "organizations_url": "https://api.github.com/users/Gongmeda/orgs",
+      "repos_url": "https://api.github.com/users/Gongmeda/repos",
+      "events_url": "https://api.github.com/users/Gongmeda/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Gongmeda/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "역질문을 유도하는 프롬프트가 인상적이네요! 👍",
+    "created_at": "2026-06-30T17:43:01Z",
+    "updated_at": "2026-06-30T17:47:13Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/27#discussion_r3500759907",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/27",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3500759907"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/27#discussion_r3500759907"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/27"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3500759907/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 239,
+    "original_line": 239,
+    "side": "RIGHT",
+    "author_association": "MEMBER",
+    "original_position": 66,
+    "position": 66,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3500770277",
+    "pull_request_review_id": 4602749614,
+    "id": 3500770277,
+    "node_id": "PRRC_kwDOSoTVOc7QqYPl",
+    "diff_hunk": "@@ -170,24 +170,50 @@ def personal_create_schedule(\n ) -> str:\n     \"\"\"Nana의 개인 일정을 현재 대화의 임시 메모리에 생성합니다.\"\"\"\n \n-    # TODO: PERSONAL_SCHEDULES에 현재 대화 범위의 개인 일정을 생성하세요.\n-    ...\n+    new_schedule = {\n+        \"id\": _new_personal_id(),\n+        \"title\": title,\n+        \"date\": date,\n+        \"start_time\": start_time,\n+        \"end_time\": end_time,\n+        \"attendees\": attendees if attendees is not None else [],\n+        \"created_at\": _now_iso(),\n+        \"session_id\": current_session_scope(),\n+    }\n+    PERSONAL_SCHEDULES.append(new_schedule)\n+    return _json({\"ok\": True, \"tool_name\": \"personal_create_schedule\", \"created_schedule\": new_schedule})\n \n \n @tool\n def personal_list_schedules(date_from: str | None = None, date_to: str | None = None) -> str:\n     \"\"\"선택한 시작일과 종료일 범위에 포함되는 Nana의 개인 일정을 조회합니다.\"\"\"\n \n-    # TODO: 현재 대화 범위의 PERSONAL_SCHEDULES를 날짜 조건으로 조회하세요.\n-    ...\n+    # 현재 세션 것만 가져옴\n+    result = _current_session_schedules()\n+\n+    if date_from:\n+        result = [s for s in result if s[\"date\"] >= date_from]\n+    if date_to:\n+        result = [s for s in result if s[\"date\"] <= date_to]\n+\n+    return _json({\"ok\": True, \"tool_name\": \"personal_list_schedules\", \"schedules\": result})\n \n \n @tool\n def personal_delete_schedule(schedule_id: str) -> str:\n     \"\"\"일정 ID에 해당하는 개인 일정을 삭제합니다.\"\"\"\n \n-    # TODO: 현재 대화 범위에서 schedule_id가 일치하는 개인 일정을 삭제하세요.\n-    ...\n+    session_id = current_session_scope()\n+    before_len = len(PERSONAL_SCHEDULES)\n+\n+    # 같은 세션이면서 id 일치하는 것만 제거\n+    PERSONAL_SCHEDULES[:] = [\n+        s for s in PERSONAL_SCHEDULES\n+        if not (s[\"id\"] == schedule_id and _schedule_scope(s) == session_id)\n+    ]\n+\n+    deleted = before_len - len(PERSONAL_SCHEDULES)\n+    return _json({\"ok\": True, \"tool_name\": \"personal_delete_schedule\", \"deleted\": deleted})",
+    "path": "student_parts/week01_wake_up_nana.py",
+    "commit_id": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "original_commit_id": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "user": {
+      "login": "Gongmeda",
+      "id": 25472942,
+      "node_id": "MDQ6VXNlcjI1NDcyOTQy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25472942?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Gongmeda",
+      "html_url": "https://github.com/Gongmeda",
+      "followers_url": "https://api.github.com/users/Gongmeda/followers",
+      "following_url": "https://api.github.com/users/Gongmeda/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Gongmeda/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Gongmeda/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Gongmeda/subscriptions",
+      "organizations_url": "https://api.github.com/users/Gongmeda/orgs",
+      "repos_url": "https://api.github.com/users/Gongmeda/repos",
+      "events_url": "https://api.github.com/users/Gongmeda/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Gongmeda/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "삭제 대상이 없을 때도 `{\"ok\": true, \"deleted\": 0}`가 반환되어, 모델이 `ok`만 보고 삭제 성공처럼 해석할 여지가 있을 것 같아요.\n“현재 대화 범위에서 해당 일정을 찾지 못했다”는 의미가 더 분명히 드러나게 정리해보면 좋을 것 같습니다!",
+    "created_at": "2026-06-30T17:44:46Z",
+    "updated_at": "2026-06-30T17:47:13Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/27#discussion_r3500770277",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/27",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3500770277"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/27#discussion_r3500770277"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/27"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3500770277/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 216,
+    "original_line": 216,
+    "side": "RIGHT",
+    "author_association": "MEMBER",
+    "original_position": 53,
+    "position": 53,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3522288650",
+    "pull_request_review_id": 4628555942,
+    "id": 3522288650,
+    "node_id": "PRRC_kwDOSoTVOc7R8dwK",
+    "diff_hunk": "@@ -170,24 +170,50 @@ def personal_create_schedule(\n ) -> str:\n     \"\"\"Nana의 개인 일정을 현재 대화의 임시 메모리에 생성합니다.\"\"\"",
+    "path": "student_parts/week01_wake_up_nana.py",
+    "commit_id": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "original_commit_id": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "docstring이 그대로 tool description으로 들어간다는 점을 놓치고 있었네요. 호출 시점이랑 인자 형식을 명시해야 tool 선택이 안정적이라는 것 배워갑니다! 다음 주차부터 반영하겠습니다!",
+    "created_at": "2026-07-04T00:31:17Z",
+    "updated_at": "2026-07-04T00:31:17Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/27#discussion_r3522288650",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/27",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3522288650"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/27#discussion_r3522288650"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/27"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3522288650/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 171,
+    "original_line": 171,
+    "side": "RIGHT",
+    "in_reply_to_id": 3500736345,
+    "author_association": "MEMBER",
+    "original_position": 2,
+    "position": 2,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3522289290",
+    "pull_request_review_id": 4628556522,
+    "id": 3522289290,
+    "node_id": "PRRC_kwDOSoTVOc7R8d6K",
+    "diff_hunk": "@@ -170,24 +170,50 @@ def personal_create_schedule(\n ) -> str:\n     \"\"\"Nana의 개인 일정을 현재 대화의 임시 메모리에 생성합니다.\"\"\"\n \n-    # TODO: PERSONAL_SCHEDULES에 현재 대화 범위의 개인 일정을 생성하세요.\n-    ...\n+    new_schedule = {\n+        \"id\": _new_personal_id(),\n+        \"title\": title,\n+        \"date\": date,\n+        \"start_time\": start_time,\n+        \"end_time\": end_time,\n+        \"attendees\": attendees if attendees is not None else [],\n+        \"created_at\": _now_iso(),\n+        \"session_id\": current_session_scope(),\n+    }\n+    PERSONAL_SCHEDULES.append(new_schedule)\n+    return _json({\"ok\": True, \"tool_name\": \"personal_create_schedule\", \"created_schedule\": new_schedule})\n \n \n @tool\n def personal_list_schedules(date_from: str | None = None, date_to: str | None = None) -> str:\n     \"\"\"선택한 시작일과 종료일 범위에 포함되는 Nana의 개인 일정을 조회합니다.\"\"\"\n \n-    # TODO: 현재 대화 범위의 PERSONAL_SCHEDULES를 날짜 조건으로 조회하세요.\n-    ...\n+    # 현재 세션 것만 가져옴\n+    result = _current_session_schedules()\n+\n+    if date_from:\n+        result = [s for s in result if s[\"date\"] >= date_from]\n+    if date_to:\n+        result = [s for s in result if s[\"date\"] <= date_to]\n+\n+    return _json({\"ok\": True, \"tool_name\": \"personal_list_schedules\", \"schedules\": result})\n \n \n @tool\n def personal_delete_schedule(schedule_id: str) -> str:\n     \"\"\"일정 ID에 해당하는 개인 일정을 삭제합니다.\"\"\"\n \n-    # TODO: 현재 대화 범위에서 schedule_id가 일치하는 개인 일정을 삭제하세요.\n-    ...\n+    session_id = current_session_scope()\n+    before_len = len(PERSONAL_SCHEDULES)\n+\n+    # 같은 세션이면서 id 일치하는 것만 제거\n+    PERSONAL_SCHEDULES[:] = [\n+        s for s in PERSONAL_SCHEDULES\n+        if not (s[\"id\"] == schedule_id and _schedule_scope(s) == session_id)\n+    ]\n+\n+    deleted = before_len - len(PERSONAL_SCHEDULES)\n+    return _json({\"ok\": True, \"tool_name\": \"personal_delete_schedule\", \"deleted\": deleted})",
+    "path": "student_parts/week01_wake_up_nana.py",
+    "commit_id": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "original_commit_id": "877ba46be3b1da1e55eaeed63537f82f7ae1222d",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "말씀 듣고 보니 ok 값의 의미 자체가 애매했던 것 같습니다. 삭제 실패가 명확히 드러나는 응답 구조로 다음 주차에 개선해보겠습니다. 감사합니다!",
+    "created_at": "2026-07-04T00:31:48Z",
+    "updated_at": "2026-07-04T00:33:51Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/27#discussion_r3522289290",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/27",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3522289290"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/27#discussion_r3522289290"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/27"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3522289290/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 216,
+    "original_line": 216,
+    "side": "RIGHT",
+    "in_reply_to_id": 3500770277,
+    "author_association": "MEMBER",
+    "original_position": 53,
+    "position": 53,
+    "subject_type": "line"
+  }
+]

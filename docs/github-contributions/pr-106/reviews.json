@@ -1,0 +1,82 @@
+[
+  {
+    "id": 4713664363,
+    "node_id": "PRR_kwDOSoTVOc8AAAABGPTPaw",
+    "user": {
+      "login": "nno0obb",
+      "id": 146364491,
+      "node_id": "U_kgDOCLlYSw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/146364491?u=f1baaa29e99d493d3819dc5106497e254ac4495e&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nno0obb",
+      "html_url": "https://github.com/nno0obb",
+      "followers_url": "https://api.github.com/users/nno0obb/followers",
+      "following_url": "https://api.github.com/users/nno0obb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nno0obb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nno0obb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nno0obb/subscriptions",
+      "organizations_url": "https://api.github.com/users/nno0obb/orgs",
+      "repos_url": "https://api.github.com/users/nno0obb/repos",
+      "events_url": "https://api.github.com/users/nno0obb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nno0obb/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "@kmgvv23 \r\n\r\n안녕하세요, \"[멘토] 김홍균\" 입니다.\r\n\r\n> 멘토마다 소속 조직과 담당 업무가 달라 피드백 방향에 다소 차이가 있을 수 있습니다.\r\n> 빠르게 피드백 드리지 못한 점 양해 부탁드립니다 (_ _)\r\n> 코드에 외에 궁금한 점도 있다면 언제든 편하게 질문 주세요 :D\r\n\r\n---\r\n\r\n### # Summary\r\n\r\n| # | 항목 | 평가 | 근거 |\r\n|---|---|---|---|\r\n| 1 | 과제 구현 정확성 (메인/심화) | ✅  | 메인·심화 모두 구현 및 정상동작 확인 |\r\n| 2 | AI 활용 | ✅ | PR 본문에 구체적으로 기록 |\r\n| 3 | 가독성 & 주석 | ✅ | 코드가 깔끔하게 작성됨 |\r\n| 4 | Python 컨벤션 | ✅ | 위반사항 없음 |\r\n| 5 | Commit 컨벤션 | ⚠️ | 단일 커밋 |\r\n\r\n### # Way to go\r\n\r\n- `_delete_saved_schedules`에서 조건이 하나도 없고 `delete_all`도 아닌 경우 실패 응답으로 막는 guard를 tool 바깥 helper로 분리한 설계가 좋았습니다.\r\n- `SaveStructuredRequestInput.unwrap_legacy_payload`가 `payload`/`structured_request` wrapper만 짧게 벗기고 실제 필드 검증은 스키마에 맡기는 것에서 의도가 명확히 보이는 점이 좋았습니다.\r\n\r\n### # Go the extra mile\r\n\r\n- `personal_create_schedule`의 `sqlite_save` 필드가 store의 raw 반환 dict라 안쪽에 `tool_name`이 없는 상태입니다. `save_structured_request_payload(save_input, store=_store())` helper 를 활용해보는 것은 어떠실까요?\r\n- `_delete_saved_schedules`에서 지금은 `title=\"회의\"` 하나만 지정해도 그대로 삭제가 진행되는것 같은데, 같은 제목의 여러 일정이 한꺼번에 지워지는 상황도 있을 수 있지 않을까요..? 그렇다면 어떻게 이를 방지할 수 있을까요..?\r\n- 혹시 멘토에게 따로 묻고 싶은 게 없을까요? 과제와 직접적인 관련 없어도 AI 사용이나 현업에 관한 질문도 괜찮습니다..!\r\n\r\n### # Just Once\r\n\r\n1. Python 을 사용한다면 `black`, `isort` 와 같은 도구를 사용해서 일관된 컨벤션을 유지해보세요.\r\n2. \"Conventional Commit\" 을 검색해서 Commit 관련 컨벤션을 공부하고 적용해보세요.\r\n3. 단일 Commit 은 PR 리뷰를 어렵게 하는 주요 원인 중 하나입니다. Commit 을 여러개로 쪼개보아요.\r\n4. AI 활용을 통해 학습한 내용을 정리해보면 좋을 것 같습니다. \"docs\" 폴더를 만들고 그 안에 내용을 채워넣어보아요.\r\n5. Pytest 와 같은 도구를 사용해 테스트를 자동화할 수 있는지 알아보아요.\r\n",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/106#pullrequestreview-4713664363",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/106",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/106#pullrequestreview-4713664363"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/106"
+      }
+    },
+    "submitted_at": "2026-07-16T12:31:28Z",
+    "commit_id": "6aa23a05f05909fdd061bbd875b3c2fa3cb19653"
+  },
+  {
+    "id": 4713670145,
+    "node_id": "PRR_kwDOSoTVOc8AAAABGPTmAQ",
+    "user": {
+      "login": "nno0obb",
+      "id": 146364491,
+      "node_id": "U_kgDOCLlYSw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/146364491?u=f1baaa29e99d493d3819dc5106497e254ac4495e&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nno0obb",
+      "html_url": "https://github.com/nno0obb",
+      "followers_url": "https://api.github.com/users/nno0obb/followers",
+      "following_url": "https://api.github.com/users/nno0obb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nno0obb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nno0obb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nno0obb/subscriptions",
+      "organizations_url": "https://api.github.com/users/nno0obb/orgs",
+      "repos_url": "https://api.github.com/users/nno0obb/repos",
+      "events_url": "https://api.github.com/users/nno0obb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nno0obb/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "@kmgvv23 \n\n> 멘토님 안녕하세요. 바쁘신 와중에도 명확하고 실질적으로 큰 도움이 되는 피드백 정말 감사드립니다. 수정 PR이 늦어진 점 죄송합니다. 개선점 관련하여 항목별로 답변드리겠습니다.\n\n감사합니다, 굉장히 뿌듯하네요 ㅎㅎ 앞으로도 열심히 하겠습니다..!\n\n> **1. `personal_create_schedule`의 `sqlite_save`에 `tool_name`이 없던 부분** 이 함수만 저장 결과를 그대로 넣다 보니 다른 tool들과 달리 `ok`/`tool_name`이 빠져 있었습니다. `save_structured_request_payload(save_input, store=_store())`로 감싸도록 수정해 반환 형식을 다른 tool들과 일관되게 맞췄습니다. 짚어주셔서 감사합니다!\n\n👍 \n\n> **2. `_delete_saved_schedules`에서 같은 제목 여러 개가 한꺼번에 삭제되는 문제** 중요한 지적 감사합니다. `title=\"회의\"` 하나로 동명의 일정이 전부 삭제되면 의도치 않은 대량 삭제가 될 수 있어, `schedule_ids`도 `delete_all`도 없이 필터로만 삭제하는 경우 먼저 `store.find_schedules(...)`로 매칭 건수를 확인하고 **2건 이상이면 삭제를 보류한 뒤 후보(candidates)를 반환**하도록 guard를 추가했습니다. (완전히 관련 있는 건 아니지만, 몇 시간 전 AWS 관련 프로젝트를 하다가 업데이트된 소스코드를 올려달라고 AI에 시켰는데, 다른 팀원이 만든 AWS Bedrock 모델을 실수로 삭제한 일이 있었습니다. 예전보다 많이 발전했다고는 해도 여전히 이런 치명적인 실수가 생길 수 있다는 걸 실감하는 계기였고, 그래서 이번 삭제 guard의 필요성에 더 공감하게 되었습니다.)\n\n그런 일이 있었군요 ㄷㄷ 그러한 경험들이 성장을 촉진한다고 저는 생각합니다.\n많은 사건과 사고들을 보기도 하고 일으키면서(?) 어떻게 예방할 수 있는지 치열하게 고민할수록\n빠르게 실력이 늘어나는 걸 체감할 수 있으실 것입니다 ㅎㅎ\n\n> **3. Commit 컨벤션** 제가 아직 깃헙 협업 경험이 많지 않아 부족했는데, 이번 기회에 Conventional Commit 개념도 숙지하는 등 많은 것을 배웠습니다. 감사합니다. 이번 수정분부터는 `fix:`(sqlite_save) / `feat:`(삭제 guard)처럼 기능 단위로 커밋을 나눠 올렸습니다. 한 가지 궁금한 점이 있는데, 과제처럼 파일 하나를 처음부터 구현하는 경우에는 커밋을 어떤 기준으로 나눠 올리는 게 좋을까요? (스키마/로직/기능 단위 등 여러 방법이 떠올라서, 실무에서 선호하시는 기준이 궁금합니다.)\n\n정해진 기준은 없습니다...만 제 선호는 최대한 잘게 입니다 ㅋㅋ\n기능단위보다는 2~3개의 함수단위, 그리고 주석이 달린 커밋을 선호하는 편입니다.\n그런데 이는 \"느낌\" 인 부분이라서 과연 이 커밋을 보고 동료들이, 그리고 AI 가 이해하기 좋을까? 를 고민하고 시도해본다면\n본인만의 기준이 생기실 것이라고 생각합니다 :D\n그 기준이 앞으로도 계속 업데이트되가며 좋은 커밋으로 이어지기를 바랍니다!\n\n> **4. black / isort** 이 도구들도 이번에 처음 알았는데 정말 유용해 보입니다. 다만 지금 파일에 뒤늦게 적용하면 기존 코드가 전부 재포맷되어 diff가 지저분해질 것 같아, 다음 주차부터 처음부터 적용하겠습니다.\n\n👍 \n\n> **5. docs 폴더 / AI 학습 정리** 좋은 제안 감사합니다. `docs/` 폴더를 만들어 이번 주차에 배운 내용(structured output → SQLite 저장 흐름, AppSQLiteStore 구조 등)을 정리하겠습니다.\n\n👍 \n\n> **6. Pytest** 아직 저장→조회→삭제를 직접 함수 호출로만 확인하고 있었는데, pytest로 이 흐름을 assert 기반 테스트로 자동화할 수 있을 것 같아 다음 주차에 적용해보겠습니다.\n\n👍 \n\n> 마지막으로 공부 차원에서 하나 여쭤보고 싶습니다. 요즘 혼자 공부하다 보면, 어떤 부분은 깊이 파고들어 직접 이해하고 어떤 부분은 AI를 어느 정도 신뢰하고 넘어가야 할지 그 깊이의 기준을 잡기가 어렵습니다. 멘토님은 학습하실 때 \"여기까지는 직접 이해하고, 이 이상은 도구나 AI를 믿고 넘어간다\"는 나름의 기준이 있으신지 궁금합니다.\n\n이것도 \"느낌\" 인 부분이라서 어렵네요...\n모든 걸 이해할 수는 없고, 그렇다고 모든 걸 알고 넘어갈 수도 없습니다.\n그 중간에 선을 그을 수 있는 것이 실력이라고 생각되네요.\n그래도 지금 제가 현업을 하면서 제가 가지고 있는 기준은 \"당장 의사결정에 필요한가?\" 입니다.\n이 프로젝트가, 이 개발사항이, 이 지식이 지금 제가 하고 있는 일을 더 잘할 수 있게하는 데 기여하는가?\n그렇다면 AI 를 통해 지속적으로 질문하고 그렇지 않다면 넘어가고 있는 것 같습니다 ㅎㅎ\n\n> 다시 한번 꼼꼼한 리뷰 감사드립니다. 수정 반영 후 재리뷰 요청 드리겠습니다! 🙇‍♂️\n\n👍 \n\n---\n\n이번 주차도 고생 많으셨습니다 (_ _)\n다음주차도 화이팅입니다!",
+    "state": "APPROVED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/106#pullrequestreview-4713670145",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/106",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/106#pullrequestreview-4713670145"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/106"
+      }
+    },
+    "submitted_at": "2026-07-19T14:02:17Z",
+    "commit_id": "19c329c0253e43f738933804bd36b76e41757fb0"
+  }
+]

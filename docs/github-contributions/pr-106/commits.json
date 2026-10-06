@@ -1,0 +1,170 @@
+[
+  {
+    "sha": "6aa23a05f05909fdd061bbd875b3c2fa3cb19653",
+    "node_id": "C_kwDOSoTVOdoAKDZhYTIzYTA1ZjA1OTA5ZmRkMDYxYmJkODc1YjNjMmZhM2NiMTk2NTM",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-15T13:00:59Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-15T13:00:59Z"
+      },
+      "message": "week3: SQLite 저장/조회/수정/삭제 tool 구현",
+      "tree": {
+        "sha": "4b2d18b293e3c20fc20d039b7228809345eb4173",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/4b2d18b293e3c20fc20d039b7228809345eb4173"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/6aa23a05f05909fdd061bbd875b3c2fa3cb19653",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/6aa23a05f05909fdd061bbd875b3c2fa3cb19653",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/6aa23a05f05909fdd061bbd875b3c2fa3cb19653",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/6aa23a05f05909fdd061bbd875b3c2fa3cb19653/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "ee948400aaaecac6ebf6e10e49330353e28f39fc",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/ee948400aaaecac6ebf6e10e49330353e28f39fc",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/ee948400aaaecac6ebf6e10e49330353e28f39fc"
+      }
+    ]
+  },
+  {
+    "sha": "288e38df5a748e3c15dd9c9b0b83d373ff7c04d2",
+    "node_id": "C_kwDOSoTVOdoAKDI4OGUzOGRmNWE3NDhlM2MxNWRkOWM5YjBiODNkMzczZmY3YzA0ZDI",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-19T01:09:23Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-19T01:09:23Z"
+      },
+      "message": "fix: personal_create_schedule의 sqlite_save를 payload helper로 감싸 tool_name 포함",
+      "tree": {
+        "sha": "6c9dc76f6ee8ef68f2cb2fe67e2ae91250ebd010",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/6c9dc76f6ee8ef68f2cb2fe67e2ae91250ebd010"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/288e38df5a748e3c15dd9c9b0b83d373ff7c04d2",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/288e38df5a748e3c15dd9c9b0b83d373ff7c04d2",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/288e38df5a748e3c15dd9c9b0b83d373ff7c04d2",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/288e38df5a748e3c15dd9c9b0b83d373ff7c04d2/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "6aa23a05f05909fdd061bbd875b3c2fa3cb19653",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/6aa23a05f05909fdd061bbd875b3c2fa3cb19653",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/6aa23a05f05909fdd061bbd875b3c2fa3cb19653"
+      }
+    ]
+  },
+  {
+    "sha": "da8ea08eac7226845f6aebffa6b6ed94e1dd9c9f",
+    "node_id": "C_kwDOSoTVOdoAKGRhOGVhMDhlYWM3MjI2ODQ1ZjZhZWJmZmE2YjZlZDk0ZTFkZDljOWY",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-19T01:10:05Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-19T01:10:05Z"
+      },
+      "message": "feat: 저장 일정 삭제 시 필터 다중 매칭이면 후보 반환하고 삭제 보류",
+      "tree": {
+        "sha": "e7280f9a02c3ec795d035e026874031b641cc4a5",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/e7280f9a02c3ec795d035e026874031b641cc4a5"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/da8ea08eac7226845f6aebffa6b6ed94e1dd9c9f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/da8ea08eac7226845f6aebffa6b6ed94e1dd9c9f",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/da8ea08eac7226845f6aebffa6b6ed94e1dd9c9f",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/da8ea08eac7226845f6aebffa6b6ed94e1dd9c9f/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "288e38df5a748e3c15dd9c9b0b83d373ff7c04d2",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/288e38df5a748e3c15dd9c9b0b83d373ff7c04d2",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/288e38df5a748e3c15dd9c9b0b83d373ff7c04d2"
+      }
+    ]
+  },
+  {
+    "sha": "19c329c0253e43f738933804bd36b76e41757fb0",
+    "node_id": "C_kwDOSoTVOdoAKDE5YzMyOWMwMjUzZTQzZjczODkzMzgwNGJkMzZiNzZlNDE3NTdmYjA",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-19T01:10:27Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-19T01:10:27Z"
+      },
+      "message": "docs: week3 학습 정리 추가",
+      "tree": {
+        "sha": "ab40ce7408382e57aa8dd6c2dab72858fd8a1997",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/ab40ce7408382e57aa8dd6c2dab72858fd8a1997"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/19c329c0253e43f738933804bd36b76e41757fb0",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/19c329c0253e43f738933804bd36b76e41757fb0",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/19c329c0253e43f738933804bd36b76e41757fb0",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/19c329c0253e43f738933804bd36b76e41757fb0/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "da8ea08eac7226845f6aebffa6b6ed94e1dd9c9f",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/da8ea08eac7226845f6aebffa6b6ed94e1dd9c9f",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/da8ea08eac7226845f6aebffa6b6ed94e1dd9c9f"
+      }
+    ]
+  }
+]

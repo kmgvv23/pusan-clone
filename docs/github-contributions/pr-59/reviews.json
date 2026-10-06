@@ -1,0 +1,202 @@
+[
+  {
+    "id": 4664603976,
+    "node_id": "PRR_kwDOSoTVOc8AAAABFgg1SA",
+    "user": {
+      "login": "Gongmeda",
+      "id": 25472942,
+      "node_id": "MDQ6VXNlcjI1NDcyOTQy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25472942?u=a0fff0bc157de5037ff0373baff4dcf029931731&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Gongmeda",
+      "html_url": "https://github.com/Gongmeda",
+      "followers_url": "https://api.github.com/users/Gongmeda/followers",
+      "following_url": "https://api.github.com/users/Gongmeda/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Gongmeda/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Gongmeda/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Gongmeda/subscriptions",
+      "organizations_url": "https://api.github.com/users/Gongmeda/orgs",
+      "repos_url": "https://api.github.com/users/Gongmeda/repos",
+      "events_url": "https://api.github.com/users/Gongmeda/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Gongmeda/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "안녕하세요~\n이번 주차 과제 진행하시느라 수고 많으셨습니다.\n\nPR 본문에서 structured output과 tool calling의 차이, 그리고 prompt_parts/system_prompt 역할 분리를 직접 정리해보신 점이 좋네요!\n\n라인별로 몇 가지 코멘트 남겼으니 확인 부탁드립니다~",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/59#pullrequestreview-4664603976",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/59",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/59#pullrequestreview-4664603976"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/59"
+      }
+    },
+    "submitted_at": "2026-07-09T16:02:32Z",
+    "commit_id": "b09560a9cb88ad0500be3954edc569b15a51d575"
+  },
+  {
+    "id": 4670047452,
+    "node_id": "PRR_kwDOSoTVOc8AAAABFltE3A",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/59#pullrequestreview-4670047452",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/59",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/59#pullrequestreview-4670047452"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/59"
+      }
+    },
+    "submitted_at": "2026-07-10T09:03:39Z",
+    "commit_id": "b09560a9cb88ad0500be3954edc569b15a51d575"
+  },
+  {
+    "id": 4670053995,
+    "node_id": "PRR_kwDOSoTVOc8AAAABFlteaw",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/59#pullrequestreview-4670053995",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/59",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/59#pullrequestreview-4670053995"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/59"
+      }
+    },
+    "submitted_at": "2026-07-10T09:04:42Z",
+    "commit_id": "b09560a9cb88ad0500be3954edc569b15a51d575"
+  },
+  {
+    "id": 4670067002,
+    "node_id": "PRR_kwDOSoTVOc8AAAABFluROg",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/59#pullrequestreview-4670067002",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/59",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/59#pullrequestreview-4670067002"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/59"
+      }
+    },
+    "submitted_at": "2026-07-10T09:06:42Z",
+    "commit_id": "b09560a9cb88ad0500be3954edc569b15a51d575"
+  },
+  {
+    "id": 4680300472,
+    "node_id": "PRR_kwDOSoTVOc8AAAABFve3uA",
+    "user": {
+      "login": "Gongmeda",
+      "id": 25472942,
+      "node_id": "MDQ6VXNlcjI1NDcyOTQy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25472942?u=a0fff0bc157de5037ff0373baff4dcf029931731&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Gongmeda",
+      "html_url": "https://github.com/Gongmeda",
+      "followers_url": "https://api.github.com/users/Gongmeda/followers",
+      "following_url": "https://api.github.com/users/Gongmeda/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Gongmeda/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Gongmeda/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Gongmeda/subscriptions",
+      "organizations_url": "https://api.github.com/users/Gongmeda/orgs",
+      "repos_url": "https://api.github.com/users/Gongmeda/repos",
+      "events_url": "https://api.github.com/users/Gongmeda/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Gongmeda/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "안녕하세요~\n피드백 반영해주시느라 수고 많으셨습니다.\n\n기존 코멘트가 모두 잘 반영되었고 기능상 크리티컬한 부분은 없는 것 같아 어프루브 드립니다!",
+    "state": "APPROVED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/59#pullrequestreview-4680300472",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/59",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/59#pullrequestreview-4680300472"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/59"
+      }
+    },
+    "submitted_at": "2026-07-12T15:35:18Z",
+    "commit_id": "c456097a242a3fe4a24d2c1732449b666453ca5b"
+  }
+]

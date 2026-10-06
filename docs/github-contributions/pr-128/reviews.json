@@ -1,0 +1,122 @@
+[
+  {
+    "id": 4772228454,
+    "node_id": "PRR_kwDOSoTVOc8AAAABHHJtZg",
+    "user": {
+      "login": "nno0obb",
+      "id": 146364491,
+      "node_id": "U_kgDOCLlYSw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/146364491?u=f1baaa29e99d493d3819dc5106497e254ac4495e&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nno0obb",
+      "html_url": "https://github.com/nno0obb",
+      "followers_url": "https://api.github.com/users/nno0obb/followers",
+      "following_url": "https://api.github.com/users/nno0obb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nno0obb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nno0obb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nno0obb/subscriptions",
+      "organizations_url": "https://api.github.com/users/nno0obb/orgs",
+      "repos_url": "https://api.github.com/users/nno0obb/repos",
+      "events_url": "https://api.github.com/users/nno0obb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nno0obb/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "@kmgvv23 \r\n\r\n안녕하세요, [멘토] 김홍균입니다.\r\n4주차 과제 구현하시느라 고생 많으셨습니다 (_ _)\r\n\r\n과제를 잘 구현해주셨고, \"docs\" 폴더에 AI 로 배운내용을 정리하시고,\r\n커밋도 잘 나누시고, 테스트 코드도 작성하고, Python 컨벤션도 잘 지키셔서\r\n더 드릴 말씀이 없네요... ㅋㅋㅋㅋ\r\n\r\n그래서 이번주차 과제에 대해서가 아닌\r\n\"멘토님께 드리는 질문 (개인적으로 궁금한 점)\" 에 대해서 자세히 답변드리겠습니다..!\r\n\r\n---\r\n\r\n> AI를 활용하는 작업을 할수록 뭔가 모를 찝찝함이 납습니다.\r\n\r\n이는 자연스러운 현상입니다. 저조차도 그렇고 제 동료분들도 모두 그렇게 느끼고 있습니다.\r\n이유는 간단합니다. AI가 말하는 것을 믿지 않을 수도 없지만 믿을 수도 없는데, 책임은 @kmgvv23 에 있기 때문입니다.\r\n만약 이번 PR 을 올리는 주체까지도 AI 였다면 찝찝함이 없었을 것입니다.\r\n다만, 찝찝함도 없지만 개인적인 성장도 없었겠죠.\r\n\r\n> AI를 활용한 프로젝트에서...\r\n> 정확한 결과물이 반드시 있어야 하는 상황에서 확률 기반 모델을 쓰는게 과연 맞을까요..?\r\n\r\n중요한 점을 짚어주셨습니다. LLM 은 \"확률\" 이라는 것을요.\r\n같은 것을 물어보지만 때때로 다른 대답을 내놓습니다.\r\n그동안 우리가 생각해왔던 코딩(Coding)은 그렇지 않았습니다.\r\n코드가 어디서든 실행되기만 하면 같은 입력에 같은 출력을 내놓았습니다.\r\n그런데 LLM 이 등장하면서 코딩이 점점 비결정론적인 상황에 놓이게 되었습니다.\r\n\r\n여기서 제가 자료공유방에 올린 인프런 강의를 꼭 들으셨으면 좋겠습니다.\r\nhttps://www.inflearn.com/course/ai시대-나의전문성-재설계-하는법?cid=342633\r\n같은 고민을 하고 있는 입장에서 정말 큰 도움이 되었던 강의입니다.\r\n\r\n**_저는 이 강의를 듣고 개발자는 이제 \"생산\" 이 아니라\r\n\"검증\" 의 영역으로 가야한다고 생각을 바꾸게 되었습니다._**\r\n\r\n<img width=\"1163\" height=\"663\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/3f9fd8f7-2989-4d4d-8cba-30496fd0b1a4\" />\r\n\r\n솔직히 많은 쿠키들이 AI \"딸깍\" 으로 과제를 해결하고 있을 것이라고 생각합니다.\r\n그렇지만 테스트 코드를 작성하고 수천번 테스트 해보았을 때 잘 동작한다면\r\n즉, 잘못될 확률이 0% 는 아니지만 0% 에 수렴한다면... 괜찮지 않을까 생각했습니다.\r\n\r\n다만, 이러한 판단이 내부 구현을 전혀 몰라야 된다는 뜻은 아닙니다.\r\n생각지 못한 장애에 대처하기 위해서는 결국 코드를 읽고 이해해야 합니다.\r\n그렇지 않다면 \"주인과 노예의 변증법\" 처럼 개발자와 AI 의 위치가 서로 바뀌게 되겠죠.\r\n번지르르한 말이지만... AI 를 사용하되 주도권을 쥐어야 한다고 말씀드리고 싶습니다.\r\n\r\n그럼 그 주도권을 쥐는 방법이 무엇인지 궁금해하실 것 같습니다.\r\n**_죄송하지만... 저도 잘 모르겠습니다..._**\r\n개인적으로 이건 \"건강하게 살기 위해서는 삼시세끼를 잘 챙겨먹고 잠을 푹 자는 것입니다\" 와 같은 말과 같은 맥락같습니다\r\n주도권을 쥐는 방법은 주도권을 쥘 수 있도록 끊임없이 공부하는 수밖에 없습니다...\r\n\r\n다만, 끊임없이 공부를 \"잘\" 하는 방법으로는 본인만의 지식베이스(KB) 를 구축하는 것을 추천드립니다.\r\nhttps://www.gpters.org/nocode/post/obsidian-rag-setup-guide-GmwUMcONgl3ZSV3\r\n\r\n> 일반적인 작업에서...\r\n> 제가 잘 모르는 영역에서 고난도 작업을 해야 할 때는 오히려 생산성이 잘 안 나오는 것 같습니다.\r\n\r\n넵, 이부분은 어쩔 수 없이 감수해야 하는 부분이라고 생각합니다.\r\n왜냐하면 저희쪽에서 검증할 수 없는 지식 베이스가 없기 때문입니다.\r\n현재 생산성은 아웃풋의 양이 아닌 어느정도 신뢰할 수 있는지에 따라 달라진다고 느끼고 있습니다.\r\n\r\n생각해보면 AI 를 쓰든 안쓰든 고난도 작업이라는 사실은 변하지 않습니다.\r\nAI 를 통해 고난도 작업이 쉬워지는 것은 절대 아니라고 생각합니다.\r\n개인적으로 저는 시간과 노력이 많이 드는 작업을 AI 를 통해 효율적으로 진행하는 것 뿐이지,\r\n어렵고 힘든 일을 AI 를 사용한다고 해서 쉽게 해결되지 않는 것 같습니다.\r\n\r\n저는 회사에서 Redis 관련 플랫폼을 운영중에 있습니다.\r\n최근 Redis 신규 버전을 검수하고 배포하는 작업을 진행했습니다.\r\n이를 위해 다음과 같은 업무를 진행했습니다.\r\n\r\n1. Redis 신규 버전에 추가된 기능 리서치\r\n2. 추가된 기능 중 중요한 기능들 추리기\r\n3. 중요한 기능들에 대해서 테스트 진행\r\n\r\n위 업무 모두 AI 에게 도움을 받았습니다.\r\n그 중 가장 AI 를 활용하여 생산성이 높아진 업무는 1,2번 작업이었으나,\r\nAI 를 활용하여 가장 많이 배울 수 있었던 것은 3번 작업이었습니다.\r\n\r\n제가 AI 활용역량이 아직 부족한 것일 수도 있습니다...\r\n그렇지만 결국 이러한 시행착오를 통해 제 나름의 AI 활용법을 익혀가고 있습니다.\r\n\r\n결론은... 직접 써보면서 저의 기준과 노하우를 적립시켜 나가고 있습니다.\r\n그 노하우는 \"프롬프트\" 와 같은 멋있는 결과물이 아니라\r\n그때그때 필요에 맞춰서 \"프롬프트를 작성하는 능력\" 이며\r\n이는 쉽게 공유할 수가 없는데 맹점이네요 ㄷㄷ\r\n\r\n때문에 저는 같은 동료 쿠키분들의 AI 환경세팅을 공유하고\r\n조그마한 주제로 해커톤을 해보는 것을 추천드립니다.\r\n저희도 결국 AI 역량을 높이기 위해서는 서로 해본것들을 공유하는게 제일 좋더라구요.\r\n인터넷에 있는 범용적으로 유명한 스킬이나 하네스를 그대로 가져다 쓰는 것도 해보고,\r\n그것을 직접 수정하면서 역량을 키우시길 바라겠습니다.\r\n\r\n---\r\n\r\n참고로 사실 코드가 실행되는 CPU 도 비결정론적인 방식으로 성능향상을 꾀하고 있습니다.\r\n인텔 CPU 의 스펙터(Spectre) 보안 취약점도 알아보시면 좋을 것 같습니다 👍 ",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/128#pullrequestreview-4772228454",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/128",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/128#pullrequestreview-4772228454"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/128"
+      }
+    },
+    "submitted_at": "2026-07-24T10:08:36Z",
+    "commit_id": "09f8b0cb399845265eae610cb5aac2c99c2e9a5c"
+  },
+  {
+    "id": 4772243426,
+    "node_id": "PRR_kwDOSoTVOc8AAAABHHKn4g",
+    "user": {
+      "login": "nno0obb",
+      "id": 146364491,
+      "node_id": "U_kgDOCLlYSw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/146364491?u=f1baaa29e99d493d3819dc5106497e254ac4495e&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nno0obb",
+      "html_url": "https://github.com/nno0obb",
+      "followers_url": "https://api.github.com/users/nno0obb/followers",
+      "following_url": "https://api.github.com/users/nno0obb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nno0obb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nno0obb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nno0obb/subscriptions",
+      "organizations_url": "https://api.github.com/users/nno0obb/orgs",
+      "repos_url": "https://api.github.com/users/nno0obb/repos",
+      "events_url": "https://api.github.com/users/nno0obb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nno0obb/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "@kmgvv23 \n\n안녕하세요, [멘토] 김홍균입니다.\n4주차 과제 구현하시느라 고생 많으셨습니다 (_ _)\n\n과제를 잘 구현해주셨고, \"docs\" 폴더에 AI 로 배운내용을 정리하시고,\n커밋도 잘 나누시고, 테스트 코드도 작성하고, Python 컨벤션도 잘 지키셔서\n더 드릴 말씀이 없네요... ㅋㅋㅋㅋ\n\n그래서 이번주차 과제에 대해서가 아닌\n\"멘토님께 드리는 질문 (개인적으로 궁금한 점)\" 에 대해서 자세히 답변드리겠습니다..!\n\n---\n\n> AI를 활용하는 작업을 할수록 뭔가 모를 찝찝함이 납습니다.\n\n이는 자연스러운 현상입니다. 저조차도 그렇고 제 동료분들도 모두 그렇게 느끼고 있습니다.\n이유는 간단합니다. AI가 말하는 것을 믿지 않을 수도 없지만 믿을 수도 없는데, 책임은 @kmgvv23 에 있기 때문입니다.\n만약 이번 PR 을 올리는 주체까지도 AI 였다면 찝찝함이 없었을 것입니다.\n다만, 찝찝함도 없지만 개인적인 성장도 없었겠죠.\n\n> AI를 활용한 프로젝트에서...\n> 정확한 결과물이 반드시 있어야 하는 상황에서 확률 기반 모델을 쓰는게 과연 맞을까요..?\n\n중요한 점을 짚어주셨습니다. LLM 은 \"확률\" 이라는 것을요.\n같은 것을 물어보지만 때때로 다른 대답을 내놓습니다.\n그동안 우리가 생각해왔던 코딩(Coding)은 그렇지 않았습니다.\n코드가 어디서든 실행되기만 하면 같은 입력에 같은 출력을 내놓았습니다.\n그런데 LLM 이 등장하면서 코딩이 점점 비결정론적인 상황에 놓이게 되었습니다.\n\n여기서 제가 자료공유방에 올린 인프런 강의를 꼭 들으셨으면 좋겠습니다.\nhttps://www.inflearn.com/course/ai시대-나의전문성-재설계-하는법?cid=342633\n같은 고민을 하고 있는 입장에서 정말 큰 도움이 되었던 강의입니다.\n\n**_저는 이 강의를 듣고 개발자는 이제 \"생산\" 이 아니라\n\"검증\" 의 영역으로 가야한다고 생각을 바꾸게 되었습니다._**\n\n<img width=\"1163\" height=\"663\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/3f9fd8f7-2989-4d4d-8cba-30496fd0b1a4\" />\n\n솔직히 많은 쿠키들이 AI \"딸깍\" 으로 과제를 해결하고 있을 것이라고 생각합니다.\n그렇지만 테스트 코드를 작성하고 수천번 테스트 해보았을 때 잘 동작한다면\n즉, 잘못될 확률이 0% 는 아니지만 0% 에 수렴한다면... 괜찮지 않을까 생각했습니다.\n\n다만, 이러한 판단이 내부 구현을 전혀 몰라야 된다는 뜻은 아닙니다.\n생각지 못한 장애에 대처하기 위해서는 결국 코드를 읽고 이해해야 합니다.\n그렇지 않다면 \"주인과 노예의 변증법\" 처럼 개발자와 AI 의 위치가 서로 바뀌게 되겠죠.\n번지르르한 말이지만... AI 를 사용하되 주도권을 쥐어야 한다고 말씀드리고 싶습니다.\n\n그럼 그 주도권을 쥐는 방법이 무엇인지 궁금해하실 것 같습니다.\n**_죄송하지만... 저도 잘 모르겠습니다..._**\n개인적으로 이건 \"건강하게 살기 위해서는 삼시세끼를 잘 챙겨먹고 잠을 푹 자는 것입니다\" 와 같은 말과 같은 맥락같습니다\n주도권을 쥐는 방법은 주도권을 쥘 수 있도록 끊임없이 공부하는 수밖에 없습니다...\n\n다만, 끊임없이 공부를 \"잘\" 하는 방법으로는 본인만의 지식베이스(KB) 를 구축하는 것을 추천드립니다.\nhttps://www.gpters.org/nocode/post/obsidian-rag-setup-guide-GmwUMcONgl3ZSV3\n\n> 일반적인 작업에서...\n> 제가 잘 모르는 영역에서 고난도 작업을 해야 할 때는 오히려 생산성이 잘 안 나오는 것 같습니다.\n\n넵, 이부분은 어쩔 수 없이 감수해야 하는 부분이라고 생각합니다.\n왜냐하면 저희쪽에서 검증할 수 없는 지식 베이스가 없기 때문입니다.\n현재 생산성은 아웃풋의 양이 아닌 어느정도 신뢰할 수 있는지에 따라 달라진다고 느끼고 있습니다.\n\n생각해보면 AI 를 쓰든 안쓰든 고난도 작업이라는 사실은 변하지 않습니다.\nAI 를 통해 고난도 작업이 쉬워지는 것은 절대 아니라고 생각합니다.\n개인적으로 저는 시간과 노력이 많이 드는 작업을 AI 를 통해 효율적으로 진행하는 것 뿐이지,\n어렵고 힘든 일을 AI 를 사용한다고 해서 쉽게 해결되지 않는 것 같습니다.\n\n저는 회사에서 Redis 관련 플랫폼을 운영중에 있습니다.\n최근 Redis 신규 버전을 검수하고 배포하는 작업을 진행했습니다.\n이를 위해 다음과 같은 업무를 진행했습니다.\n\n1. Redis 신규 버전에 추가된 기능 리서치\n2. 추가된 기능 중 중요한 기능들 추리기\n3. 중요한 기능들에 대해서 테스트 진행\n\n위 업무 모두 AI 에게 도움을 받았습니다.\n그 중 가장 AI 를 활용하여 생산성이 높아진 업무는 1,2번 작업이었으나,\nAI 를 활용하여 가장 많이 배울 수 있었던 것은 3번 작업이었습니다.\n\n제가 AI 활용역량이 아직 부족한 것일 수도 있습니다...\n그렇지만 결국 이러한 시행착오를 통해 제 나름의 AI 활용법을 익혀가고 있습니다.\n\n결론은... 직접 써보면서 저의 기준과 노하우를 적립시켜 나가고 있습니다.\n그 노하우는 \"프롬프트\" 와 같은 멋있는 결과물이 아니라\n그때그때 필요에 맞춰서 \"프롬프트를 작성하는 능력\" 이며\n이는 쉽게 공유할 수가 없는데 맹점이네요 ㄷㄷ\n\n때문에 저는 같은 동료 쿠키분들의 AI 환경세팅을 공유하고\n조그마한 주제로 해커톤을 해보는 것을 추천드립니다.\n저희도 결국 AI 역량을 높이기 위해서는 서로 해본것들을 공유하는게 제일 좋더라구요.\n인터넷에 있는 범용적으로 유명한 스킬이나 하네스를 그대로 가져다 쓰는 것도 해보고,\n그것을 직접 수정하면서 역량을 키우시길 바라겠습니다.\n\n---\n\n참고로 사실 코드가 실행되는 CPU 도 비결정론적인 방식으로 성능향상을 꾀하고 있습니다.\n인텔 CPU 의 스펙터(Spectre) 보안 취약점도 알아보시면 좋을 것 같습니다 👍 ",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/128#pullrequestreview-4772243426",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/128",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/128#pullrequestreview-4772243426"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/128"
+      }
+    },
+    "submitted_at": "2026-07-24T10:11:10Z",
+    "commit_id": "09f8b0cb399845265eae610cb5aac2c99c2e9a5c"
+  },
+  {
+    "id": 4781560767,
+    "node_id": "PRR_kwDOSoTVOc8AAAABHQDTvw",
+    "user": {
+      "login": "nno0obb",
+      "id": 146364491,
+      "node_id": "U_kgDOCLlYSw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/146364491?u=f1baaa29e99d493d3819dc5106497e254ac4495e&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nno0obb",
+      "html_url": "https://github.com/nno0obb",
+      "followers_url": "https://api.github.com/users/nno0obb/followers",
+      "following_url": "https://api.github.com/users/nno0obb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nno0obb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nno0obb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nno0obb/subscriptions",
+      "organizations_url": "https://api.github.com/users/nno0obb/orgs",
+      "repos_url": "https://api.github.com/users/nno0obb/repos",
+      "events_url": "https://api.github.com/users/nno0obb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nno0obb/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "@kmgvv23 \n\n네넵, 이번 4주차도 고생 많으셨습니다.\n이번 카카오테크캠퍼스에서 지금 배우는 AI 관련 지식뿐만이 아니라\n좋은 동료와 다양한 인사이트도 얻으실 수 있기를 진심으로 응원합니다.\n5주차도 화이팅입니다! 🔥 ",
+    "state": "APPROVED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/128#pullrequestreview-4781560767",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/128",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/128#pullrequestreview-4781560767"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/128"
+      }
+    },
+    "submitted_at": "2026-07-26T11:27:43Z",
+    "commit_id": "09f8b0cb399845265eae610cb5aac2c99c2e9a5c"
+  }
+]

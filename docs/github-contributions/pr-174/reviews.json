@@ -1,0 +1,322 @@
+[
+  {
+    "id": 4820306164,
+    "node_id": "PRR_kwDOSoTVOc8AAAABH1AI9A",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "week5 1차 리뷰입니다. 메인 5개와 심화 2개 모두 구현하셨습니다.\n\n내 일정은 앱 DB에서, 외부 멤버 일정은 MCP에서 가져오도록 출처를 나누고 외부 조회에서 \"나\"를 걸러낸 처리가 좋았습니다. 앱이 일정을 저장할 때 외부 저장소에도 \"나\" 복사본을 만들어 두기 때문에, 걸러내지 않았다면 같은 일정이 두 번 나왔을 겁니다.\n\n반드시 고칠 것보다는 제안 위주로 세 개를 인라인에 남겼습니다 — 프롬프트와 구현이 어긋난 지점, 주석 교정, 테스트 보강입니다. 반영해 주시면 확인 후 승인드리겠습니다.",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4820306164",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4820306164"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "submitted_at": "2026-07-30T15:15:44Z",
+    "commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4"
+  },
+  {
+    "id": 4837660802,
+    "node_id": "PRR_kwDOSoTVOc8AAAABIFjYgg",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4837660802",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4837660802"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "submitted_at": "2026-08-02T07:40:31Z",
+    "commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4"
+  },
+  {
+    "id": 4837666359,
+    "node_id": "PRR_kwDOSoTVOc8AAAABIFjuNw",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4837666359",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4837666359"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "submitted_at": "2026-08-02T07:42:26Z",
+    "commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4"
+  },
+  {
+    "id": 4837698996,
+    "node_id": "PRR_kwDOSoTVOc8AAAABIFlttA",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4837698996",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4837698996"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "submitted_at": "2026-08-02T07:54:07Z",
+    "commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4"
+  },
+  {
+    "id": 4844837626,
+    "node_id": "PRR_kwDOSoTVOc8AAAABIMZa-g",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "승인합니다. 프롬프트·주석·테스트 세 가지 모두 반영을 확인했고, 각 지점에 확인 코멘트를 달았습니다.",
+    "state": "APPROVED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4844837626",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4844837626"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "submitted_at": "2026-08-03T14:15:41Z",
+    "commit_id": "d3bddd5bbbb1cc347316c8068f500205cc70498c"
+  },
+  {
+    "id": 4845031897,
+    "node_id": "PRR_kwDOSoTVOc8AAAABIMlR2Q",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4845031897",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4845031897"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "submitted_at": "2026-08-03T14:15:42Z",
+    "commit_id": "d3bddd5bbbb1cc347316c8068f500205cc70498c"
+  },
+  {
+    "id": 4845032171,
+    "node_id": "PRR_kwDOSoTVOc8AAAABIMlS6w",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4845032171",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4845032171"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "submitted_at": "2026-08-03T14:15:44Z",
+    "commit_id": "d3bddd5bbbb1cc347316c8068f500205cc70498c"
+  },
+  {
+    "id": 4845032451,
+    "node_id": "PRR_kwDOSoTVOc8AAAABIMlUAw",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4845032451",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#pullrequestreview-4845032451"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "submitted_at": "2026-08-03T14:15:45Z",
+    "commit_id": "d3bddd5bbbb1cc347316c8068f500205cc70498c"
+  }
+]

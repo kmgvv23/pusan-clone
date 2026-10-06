@@ -1,0 +1,629 @@
+[
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3683890503",
+    "pull_request_review_id": 4820306164,
+    "id": 3683890503,
+    "node_id": "PRRC_kwDOSoTVOc7bk7VH",
+    "diff_hunk": "@@ -390,7 +497,19 @@ def week05_prompt_parts() -> list[str]:\n \n     return [\n         *week04_prompt_parts(),\n-        # TODO: Week 5 Kana history agent system prompt를 자유롭게 추가하세요.\n+        \"내 개인 정보(메모·저장한 일정·내 앱 대화)는 이전 주차 도구로 처리하고, \"\n+        \"다른 사람(외부 멤버)의 과거 대화와 일정은 Week 5 MCP wrapper로 처리한다. \"\n+        \"내 앱 대화 검색은 search_conversation_messages, 외부 멤버의 과거 대화 검색은 \"\n+        \"search_previous_conversations로 서로 다른 저장소를 본다는 점을 혼동하지 않는다.\",\n+        \"다른 사람의 일정을 물으면 extract_schedules_from_history로 그 멤버의 일정을 추출하고, \"\n+        \"특정 대화의 전체 내용이 필요하면 search_previous_conversations로 conversation_id를 찾은 뒤 \"\n+        \"load_conversation_messages로 불러온다. 공유 일정 저장소 자체를 확인할 때는 list_shared_schedules를 쓴다.\",\n+        \"나와 다른 사람의 일정을 함께 봐야 하는 조율 질문에는 collect_member_schedules를 사용한다. \"\n+        \"member_names에는 조율 대상 전원을 넣고, 내 일정이 필요하면 '나'를 함께 넣는다. \"\n+        \"이 tool은 내 일정과 외부 멤버 일정을 같은 구조로 모아 주므로 출처별로 따로 호출하지 않는다.\",",
+    "path": "student_parts/week05_load_kanas_past_conversations.py",
+    "commit_id": "d3bddd5bbbb1cc347316c8068f500205cc70498c",
+    "original_commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "프롬프트는 \"내 일정이 필요하면 `'나'`를 함께 넣는다\"고 안내하는데, 구현은 \"나\" 여부와 무관하게 내 일정을 항상 포함합니다. PR 본문에서 \"항상 포함\"을 의도적으로 고르셨으니, 프롬프트를 구현 쪽에 맞추면 됩니다.\n\n```python\n        \"나와 다른 사람의 일정을 함께 봐야 하는 조율 질문에는 collect_member_schedules를 사용한다. \"\n        \"이 tool은 내 일정을 항상 포함하므로 member_names에는 외부 조율 대상만 넣으면 된다. \"\n        \"이 tool은 내 일정과 외부 멤버 일정을 같은 구조로 모아 주므로 출처별로 따로 호출하지 않는다.\",\n```\n\n지금 동작에는 문제가 없지만, 안내와 실제가 다르면 나중에 이 tool을 다시 볼 때 헷갈립니다.",
+    "created_at": "2026-07-30T15:12:20Z",
+    "updated_at": "2026-07-30T15:15:44Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3683890503",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3683890503"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3683890503"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3683890503/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": 508,
+    "original_start_line": 507,
+    "start_side": "RIGHT",
+    "line": 510,
+    "original_line": 509,
+    "side": "RIGHT",
+    "author_association": "MEMBER",
+    "original_position": 228,
+    "position": 229,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3683890510",
+    "pull_request_review_id": 4820306164,
+    "id": 3683890510,
+    "node_id": "PRRC_kwDOSoTVOc7bk7VO",
+    "diff_hunk": "@@ -282,8 +297,59 @@ def _collect_member_schedules(\n ) -> dict[str, Any]:\n     \"\"\"내 일정과 외부 멤버 일정을 같은 row 구조로 합칩니다.\"\"\"\n \n-    # TODO: 내 SQLite/임시 일정과 외부 MCP 일정 rows를 같은 구조로 합치세요.\n-    ...\n+    normalized_members = normalize_external_member_names(member_names)\n+    normalized_date_from, normalized_date_to = normalize_external_schedule_date_bounds(\n+        member_names, date_from, date_to\n+    )\n+\n+    # 내 일정은 앱 SQLite/임시 메모리가 권위 있는 출처라 여기서 직접 row로 만든다.\n+    rows: list[dict[str, Any]] = []\n+    for schedule in personal_schedules:\n+        request = _structured_request_from_schedule_row(schedule)\n+        if not request.date:\n+            continue\n+        if normalized_date_from and request.date < normalized_date_from:\n+            continue\n+        if normalized_date_to and request.date > normalized_date_to:\n+            continue\n+        rows.append(\n+            {\n+                \"member_name\": \"나\",\n+                \"title\": request.title or \"제목 없음\",\n+                \"date\": request.date,\n+                \"start_time\": request.start_time or \"미정\",\n+                \"end_time\": request.end_time or \"미정\",\n+                \"notes\": schedule.get(\"notes\") or \"저장된 내 일정\",\n+            }\n+        )\n+\n+    # \"나\"는 외부 저장소에 없는 사람이라 MCP 조회 대상에서 제외한다.\n+    external_members = [name for name in normalized_members if name != \"나\"]",
+    "path": "student_parts/week05_load_kanas_past_conversations.py",
+    "commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "original_commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "이 주석의 이유가 실제 구조와 반대입니다. 외부 저장소에는 \"나\" 데이터가 있습니다 — 앱이 일정을 저장할 때마다 \"나\" 이름으로 복사본을 만들어 둡니다(`fixed/external_mcp.py`의 `sync_personal_schedule_to_shared`). 위에서 앱 DB의 내 일정을 이미 넣었는데 외부 복사본까지 받으면 같은 일정이 두 번 들어오기 때문에 빼는 것이 맞습니다. 동작은 정확하니 주석만 고치면 됩니다.\n\n```python\n    # 내 일정은 앱 DB에서 이미 읽었고 외부 저장소에도 \"나\" 복사본이 있으므로,\n    # 중복 수집을 막기 위해 MCP 조회 대상에서는 제외한다.\n```",
+    "created_at": "2026-07-30T15:12:20Z",
+    "updated_at": "2026-07-30T15:15:44Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3683890510",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3683890510"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3683890510"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3683890510/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": 326,
+    "start_side": "RIGHT",
+    "line": null,
+    "original_line": 327,
+    "side": "RIGHT",
+    "author_association": "MEMBER",
+    "original_position": 68,
+    "position": 1,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3683890516",
+    "pull_request_review_id": 4820306164,
+    "id": 3683890516,
+    "node_id": "PRRC_kwDOSoTVOc7bk7VU",
+    "diff_hunk": "@@ -0,0 +1,85 @@\n+\"\"\"Week 5 외부 멤버 일정 수집 helper 테스트.\n+\n+MCP subprocess를 띄우지 않는 경로만 검증한다.\n+외부 조회가 필요 없는 조건(외부 멤버가 없는 경우)과 내 일정 필터링/중복 제거를 확인한다.\n+실행: uv run pytest tests/test_week05.py\n+\"\"\"",
+    "path": "tests/test_week05.py",
+    "commit_id": "d3bddd5bbbb1cc347316c8068f500205cc70498c",
+    "original_commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "설명은 \"중복 제거를 확인한다\"인데, 현재 테스트 중 어느 것도 `_personal_schedules_for_current_scope()`를 호출하지 않아 중복 제거 경로는 타지 않습니다. 아래처럼 하나 추가하면 설명과 맞습니다.\n\n```python\nimport student_parts.week05_load_kanas_past_conversations as week05\n\n\ndef test_personal_schedules_dedup_saved_and_pending(monkeypatch):\n    saved = {\"schedule_id\": \"sch_1\", \"title\": \"회의\", \"date\": \"2026-07-10\"}\n    pending = {\"id\": \"sch_1\", \"title\": \"회의\", \"date\": \"2026-07-10\", \"session_id\": \"s1\"}\n    other = {\"id\": \"sch_2\", \"title\": \"헬스장\", \"date\": \"2026-07-11\", \"session_id\": \"s1\"}\n\n    class FakeStore:\n        def __init__(self, _path):\n            pass\n\n        def list_schedules(self, limit=12):\n            return [saved]\n\n    monkeypatch.setattr(week05, \"AppSQLiteStore\", FakeStore)\n    monkeypatch.setattr(week05, \"PERSONAL_SCHEDULES\", [pending, other])\n    monkeypatch.setattr(week05, \"current_session_scope\", lambda: \"s1\")\n\n    assert week05._personal_schedules_for_current_scope() == [saved, other]\n```\n\n실행 안내의 `uv run pytest`는 `pytest`가 의존성에 없어 환경에 따라 실패합니다. `uv run --with pytest python -m pytest -q tests/test_week05.py`로 적으면 그대로 돌아갑니다.",
+    "created_at": "2026-07-30T15:12:20Z",
+    "updated_at": "2026-07-30T15:15:44Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3683890516",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3683890516"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3683890516"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3683890516/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": 1,
+    "original_start_line": 1,
+    "start_side": "RIGHT",
+    "line": 6,
+    "original_line": 6,
+    "side": "RIGHT",
+    "author_association": "MEMBER",
+    "original_position": 6,
+    "position": 6,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3698278140",
+    "pull_request_review_id": 4837660802,
+    "id": 3698278140,
+    "node_id": "PRRC_kwDOSoTVOc7cbz78",
+    "diff_hunk": "@@ -390,7 +497,19 @@ def week05_prompt_parts() -> list[str]:\n \n     return [\n         *week04_prompt_parts(),\n-        # TODO: Week 5 Kana history agent system prompt를 자유롭게 추가하세요.\n+        \"내 개인 정보(메모·저장한 일정·내 앱 대화)는 이전 주차 도구로 처리하고, \"\n+        \"다른 사람(외부 멤버)의 과거 대화와 일정은 Week 5 MCP wrapper로 처리한다. \"\n+        \"내 앱 대화 검색은 search_conversation_messages, 외부 멤버의 과거 대화 검색은 \"\n+        \"search_previous_conversations로 서로 다른 저장소를 본다는 점을 혼동하지 않는다.\",\n+        \"다른 사람의 일정을 물으면 extract_schedules_from_history로 그 멤버의 일정을 추출하고, \"\n+        \"특정 대화의 전체 내용이 필요하면 search_previous_conversations로 conversation_id를 찾은 뒤 \"\n+        \"load_conversation_messages로 불러온다. 공유 일정 저장소 자체를 확인할 때는 list_shared_schedules를 쓴다.\",\n+        \"나와 다른 사람의 일정을 함께 봐야 하는 조율 질문에는 collect_member_schedules를 사용한다. \"\n+        \"member_names에는 조율 대상 전원을 넣고, 내 일정이 필요하면 '나'를 함께 넣는다. \"\n+        \"이 tool은 내 일정과 외부 멤버 일정을 같은 구조로 모아 주므로 출처별로 따로 호출하지 않는다.\",",
+    "path": "student_parts/week05_load_kanas_past_conversations.py",
+    "commit_id": "d3bddd5bbbb1cc347316c8068f500205cc70498c",
+    "original_commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "항상 포함으로 정해놓고 프롬프트는 이전에 고민하던 조건부 방식 문구를 그대로 두었네요. 제안해주신 문구로 교체해 안내와 구현을 맞췄습니다.\r\n",
+    "created_at": "2026-08-02T07:40:31Z",
+    "updated_at": "2026-08-02T07:40:31Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3698278140",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3698278140"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3698278140"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3698278140/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": 508,
+    "original_start_line": 507,
+    "start_side": "RIGHT",
+    "line": 510,
+    "original_line": 509,
+    "side": "RIGHT",
+    "in_reply_to_id": 3683890503,
+    "author_association": "MEMBER",
+    "original_position": 228,
+    "position": 229,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3698283379",
+    "pull_request_review_id": 4837666359,
+    "id": 3698283379,
+    "node_id": "PRRC_kwDOSoTVOc7cb1Nz",
+    "diff_hunk": "@@ -282,8 +297,59 @@ def _collect_member_schedules(\n ) -> dict[str, Any]:\n     \"\"\"내 일정과 외부 멤버 일정을 같은 row 구조로 합칩니다.\"\"\"\n \n-    # TODO: 내 SQLite/임시 일정과 외부 MCP 일정 rows를 같은 구조로 합치세요.\n-    ...\n+    normalized_members = normalize_external_member_names(member_names)\n+    normalized_date_from, normalized_date_to = normalize_external_schedule_date_bounds(\n+        member_names, date_from, date_to\n+    )\n+\n+    # 내 일정은 앱 SQLite/임시 메모리가 권위 있는 출처라 여기서 직접 row로 만든다.\n+    rows: list[dict[str, Any]] = []\n+    for schedule in personal_schedules:\n+        request = _structured_request_from_schedule_row(schedule)\n+        if not request.date:\n+            continue\n+        if normalized_date_from and request.date < normalized_date_from:\n+            continue\n+        if normalized_date_to and request.date > normalized_date_to:\n+            continue\n+        rows.append(\n+            {\n+                \"member_name\": \"나\",\n+                \"title\": request.title or \"제목 없음\",\n+                \"date\": request.date,\n+                \"start_time\": request.start_time or \"미정\",\n+                \"end_time\": request.end_time or \"미정\",\n+                \"notes\": schedule.get(\"notes\") or \"저장된 내 일정\",\n+            }\n+        )\n+\n+    # \"나\"는 외부 저장소에 없는 사람이라 MCP 조회 대상에서 제외한다.\n+    external_members = [name for name in normalized_members if name != \"나\"]",
+    "path": "student_parts/week05_load_kanas_past_conversations.py",
+    "commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "original_commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "이것 또한 코드 이해가 부족했고, 계속 파악하던 중 작성한 주석을 그대로 써뒀던 것 같습니다. 결과값은 같겠지만, 주석은 제시해주신것으로 수정했습니다.",
+    "created_at": "2026-08-02T07:42:26Z",
+    "updated_at": "2026-08-02T07:42:27Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3698283379",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3698283379"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3698283379"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3698283379/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": 326,
+    "start_side": "RIGHT",
+    "line": null,
+    "original_line": 327,
+    "side": "RIGHT",
+    "in_reply_to_id": 3683890510,
+    "author_association": "MEMBER",
+    "original_position": 68,
+    "position": 1,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3698313913",
+    "pull_request_review_id": 4837698996,
+    "id": 3698313913,
+    "node_id": "PRRC_kwDOSoTVOc7cb8q5",
+    "diff_hunk": "@@ -0,0 +1,85 @@\n+\"\"\"Week 5 외부 멤버 일정 수집 helper 테스트.\n+\n+MCP subprocess를 띄우지 않는 경로만 검증한다.\n+외부 조회가 필요 없는 조건(외부 멤버가 없는 경우)과 내 일정 필터링/중복 제거를 확인한다.\n+실행: uv run pytest tests/test_week05.py\n+\"\"\"",
+    "path": "tests/test_week05.py",
+    "commit_id": "d3bddd5bbbb1cc347316c8068f500205cc70498c",
+    "original_commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "pytest는 이전 멘토님이 제안해주신 방법인데 제대로 파악하지 못한 채 LLM을 활용해 작성하다 보니, 설명만 써두고 정작 중복 제거 경로는 검증하지 못했던 것 같습니다.\r\n\r\n주신 코드를 보고 실제 DB에 의존하지 않도록 저장소를 바꿔 테스트하는 방식을 알게 됐습니다. 테스트가 실행 환경의 실제 데이터에 따라 결과가 달라지면 안 된다는 점도 이번에 이해했습니다. 그대로 추가해 설명과 맞췄고, 실행 안내도 uv run --with pytest python -m pytest -q ...로 수정했습니다.",
+    "created_at": "2026-08-02T07:54:07Z",
+    "updated_at": "2026-08-02T07:54:07Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3698313913",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3698313913"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3698313913"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3698313913/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": 1,
+    "original_start_line": 1,
+    "start_side": "RIGHT",
+    "line": 6,
+    "original_line": 6,
+    "side": "RIGHT",
+    "in_reply_to_id": 3683890516,
+    "author_association": "MEMBER",
+    "original_position": 6,
+    "position": 6,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3704710556",
+    "pull_request_review_id": 4845031897,
+    "id": 3704710556,
+    "node_id": "PRRC_kwDOSoTVOc7c0WWc",
+    "diff_hunk": "@@ -390,7 +497,19 @@ def week05_prompt_parts() -> list[str]:\n \n     return [\n         *week04_prompt_parts(),\n-        # TODO: Week 5 Kana history agent system prompt를 자유롭게 추가하세요.\n+        \"내 개인 정보(메모·저장한 일정·내 앱 대화)는 이전 주차 도구로 처리하고, \"\n+        \"다른 사람(외부 멤버)의 과거 대화와 일정은 Week 5 MCP wrapper로 처리한다. \"\n+        \"내 앱 대화 검색은 search_conversation_messages, 외부 멤버의 과거 대화 검색은 \"\n+        \"search_previous_conversations로 서로 다른 저장소를 본다는 점을 혼동하지 않는다.\",\n+        \"다른 사람의 일정을 물으면 extract_schedules_from_history로 그 멤버의 일정을 추출하고, \"\n+        \"특정 대화의 전체 내용이 필요하면 search_previous_conversations로 conversation_id를 찾은 뒤 \"\n+        \"load_conversation_messages로 불러온다. 공유 일정 저장소 자체를 확인할 때는 list_shared_schedules를 쓴다.\",\n+        \"나와 다른 사람의 일정을 함께 봐야 하는 조율 질문에는 collect_member_schedules를 사용한다. \"\n+        \"member_names에는 조율 대상 전원을 넣고, 내 일정이 필요하면 '나'를 함께 넣는다. \"\n+        \"이 tool은 내 일정과 외부 멤버 일정을 같은 구조로 모아 주므로 출처별로 따로 호출하지 않는다.\",",
+    "path": "student_parts/week05_load_kanas_past_conversations.py",
+    "commit_id": "d3bddd5bbbb1cc347316c8068f500205cc70498c",
+    "original_commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "교체 확인했습니다. `member_names`에 외부 조율 대상만 넣으라고 안내가 분명해져서, 프롬프트와 구현이 같은 말을 하게 됐습니다.",
+    "created_at": "2026-08-03T14:15:42Z",
+    "updated_at": "2026-08-03T14:15:42Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3704710556",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3704710556"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3704710556"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3704710556/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": 508,
+    "original_start_line": 507,
+    "start_side": "RIGHT",
+    "line": 510,
+    "original_line": 509,
+    "side": "RIGHT",
+    "in_reply_to_id": 3683890503,
+    "author_association": "MEMBER",
+    "original_position": 228,
+    "position": 229,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3704710742",
+    "pull_request_review_id": 4845032171,
+    "id": 3704710742,
+    "node_id": "PRRC_kwDOSoTVOc7c0WZW",
+    "diff_hunk": "@@ -282,8 +297,59 @@ def _collect_member_schedules(\n ) -> dict[str, Any]:\n     \"\"\"내 일정과 외부 멤버 일정을 같은 row 구조로 합칩니다.\"\"\"\n \n-    # TODO: 내 SQLite/임시 일정과 외부 MCP 일정 rows를 같은 구조로 합치세요.\n-    ...\n+    normalized_members = normalize_external_member_names(member_names)\n+    normalized_date_from, normalized_date_to = normalize_external_schedule_date_bounds(\n+        member_names, date_from, date_to\n+    )\n+\n+    # 내 일정은 앱 SQLite/임시 메모리가 권위 있는 출처라 여기서 직접 row로 만든다.\n+    rows: list[dict[str, Any]] = []\n+    for schedule in personal_schedules:\n+        request = _structured_request_from_schedule_row(schedule)\n+        if not request.date:\n+            continue\n+        if normalized_date_from and request.date < normalized_date_from:\n+            continue\n+        if normalized_date_to and request.date > normalized_date_to:\n+            continue\n+        rows.append(\n+            {\n+                \"member_name\": \"나\",\n+                \"title\": request.title or \"제목 없음\",\n+                \"date\": request.date,\n+                \"start_time\": request.start_time or \"미정\",\n+                \"end_time\": request.end_time or \"미정\",\n+                \"notes\": schedule.get(\"notes\") or \"저장된 내 일정\",\n+            }\n+        )\n+\n+    # \"나\"는 외부 저장소에 없는 사람이라 MCP 조회 대상에서 제외한다.\n+    external_members = [name for name in normalized_members if name != \"나\"]",
+    "path": "student_parts/week05_load_kanas_past_conversations.py",
+    "commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "original_commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "주석 수정 확인했습니다. 이유가 \"거기 없어서\"가 아니라 \"이미 한 벌 있어서\"라는 게 핵심인데 그대로 반영해 주셨습니다.\n\n한 가지만 덧붙이면, 문자열 `\"나\"`는 `fixed/external_people_store.py`에 `PERSONAL_SHARED_MEMBER_NAME` 상수로도 있습니다. 지금 동작에는 문제없지만 다음에 손볼 일이 있으면 상수를 import해 쓰는 편이 이름이 바뀔 때 안전합니다.",
+    "created_at": "2026-08-03T14:15:44Z",
+    "updated_at": "2026-08-03T14:15:44Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3704710742",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3704710742"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3704710742"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3704710742/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": 326,
+    "start_side": "RIGHT",
+    "line": null,
+    "original_line": 327,
+    "side": "RIGHT",
+    "in_reply_to_id": 3683890510,
+    "author_association": "MEMBER",
+    "original_position": 68,
+    "position": 1,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3704710978",
+    "pull_request_review_id": 4845032451,
+    "id": 3704710978,
+    "node_id": "PRRC_kwDOSoTVOc7c0WdC",
+    "diff_hunk": "@@ -0,0 +1,85 @@\n+\"\"\"Week 5 외부 멤버 일정 수집 helper 테스트.\n+\n+MCP subprocess를 띄우지 않는 경로만 검증한다.\n+외부 조회가 필요 없는 조건(외부 멤버가 없는 경우)과 내 일정 필터링/중복 제거를 확인한다.\n+실행: uv run pytest tests/test_week05.py\n+\"\"\"",
+    "path": "tests/test_week05.py",
+    "commit_id": "d3bddd5bbbb1cc347316c8068f500205cc70498c",
+    "original_commit_id": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "테스트 추가 확인했습니다.",
+    "created_at": "2026-08-03T14:15:45Z",
+    "updated_at": "2026-08-03T14:18:05Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3704710978",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3704710978"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/174#discussion_r3704710978"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/174"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3704710978/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": 1,
+    "original_start_line": 1,
+    "start_side": "RIGHT",
+    "line": 6,
+    "original_line": 6,
+    "side": "RIGHT",
+    "in_reply_to_id": 3683890516,
+    "author_association": "MEMBER",
+    "original_position": 6,
+    "position": 6,
+    "subject_type": "line"
+  }
+]

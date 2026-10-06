@@ -1,0 +1,48 @@
+[
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/issues/comments/5230488718",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#issuecomment-5230488718",
+    "issue_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/issues/208",
+    "id": 5230488718,
+    "node_id": "IC_kwDOSoTVOc8AAAABN8Lsjg",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2026-08-09T08:03:18Z",
+    "updated_at": "2026-08-09T08:03:18Z",
+    "body": "제가 또 놓쳤던 부분이 많았던 것 같습니다. 리뷰해주셔서 감사합니다.\r\n그리고, 제가 별개로 드렸던 질문에 명확하게 답변주셔서 정말 큰 도움 될 것 같고, 궁금증도 해소된 것 같습니다. 감사합니다!",
+    "author_association": "MEMBER",
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/issues/comments/5230488718/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+]

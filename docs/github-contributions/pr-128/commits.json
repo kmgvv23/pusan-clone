@@ -1,0 +1,296 @@
+[
+  {
+    "sha": "c23f54059b2edab6d3790f89c26b6613e65b117f",
+    "node_id": "C_kwDOSoTVOdoAKGMyM2Y1NDA1OWIyZWRhYjZkMzc5MGY4OWMyNmI2NjEzZTY1YjExN2Y",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:16:10Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:16:10Z"
+      },
+      "message": "feat: 개인 참고자료 저장 tool 구현\n\nadd_personal_reference_dict는 PersonalReferenceStore 저장 결과에서 backend와\nreference row를 분리해 dict로 정리하고, add_personal_reference tool은 그 결과를\nok/tool_name과 함께 JSON 문자열로 반환한다.",
+      "tree": {
+        "sha": "1ce3ddba0ab38a349d9897b5a0d075a4bbdc86e2",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/1ce3ddba0ab38a349d9897b5a0d075a4bbdc86e2"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/c23f54059b2edab6d3790f89c26b6613e65b117f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/c23f54059b2edab6d3790f89c26b6613e65b117f",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/c23f54059b2edab6d3790f89c26b6613e65b117f",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/c23f54059b2edab6d3790f89c26b6613e65b117f/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "cb52ff30966f85535147f588c9a519a4e18aa884",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/cb52ff30966f85535147f588c9a519a4e18aa884",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/cb52ff30966f85535147f588c9a519a4e18aa884"
+      }
+    ]
+  },
+  {
+    "sha": "2116c33212724cbbbe14ecef7ad31e4ea74b9ef1",
+    "node_id": "C_kwDOSoTVOdoAKDIxMTZjMzMyMTI3MjRjYmJiZTE0ZWNlZjdhZDMxZTRlYTc0YjllZjE",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:16:39Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:16:39Z"
+      },
+      "message": "feat: 개인 참고자료 검색 tool 구현\n\nsearch_personal_reference_hits는 ChromaDB 검색 결과를 id/content/distance/metadata\n구조로 정리하고, search_personal_references tool은 top_k를 safe_limit으로 보정한 뒤\ntop-level hits 계약에 맞춰 JSON으로 반환한다.",
+      "tree": {
+        "sha": "1e199f5673f98b696afac0dfbbe6ec53aef6a8b4",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/1e199f5673f98b696afac0dfbbe6ec53aef6a8b4"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/2116c33212724cbbbe14ecef7ad31e4ea74b9ef1",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/2116c33212724cbbbe14ecef7ad31e4ea74b9ef1",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/2116c33212724cbbbe14ecef7ad31e4ea74b9ef1",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/2116c33212724cbbbe14ecef7ad31e4ea74b9ef1/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "c23f54059b2edab6d3790f89c26b6613e65b117f",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/c23f54059b2edab6d3790f89c26b6613e65b117f",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/c23f54059b2edab6d3790f89c26b6613e65b117f"
+      }
+    ]
+  },
+  {
+    "sha": "630674b20be367dd379d2018d21b2c4913712ea9",
+    "node_id": "C_kwDOSoTVOdoAKDYzMDY3NGIyMGJlMzY3ZGQzNzlkMjAxOGQyMWIyYzQ5MTM3MTJlYTk",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:17:05Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:17:05Z"
+      },
+      "message": "feat: 저장 일정 검색 tool 구현\n\nsearch_saved_request_rows는 AppSQLiteStore.search_saved_requests를 키워드 인자로\n호출해 검색 결과 rows를 그대로 반환하고(결과 없으면 빈 리스트),\nsearch_saved_requests tool은 top_k를 보정한 뒤 top-level rows 계약으로 반환한다.",
+      "tree": {
+        "sha": "a3d80dcd9c6e69e1bb12498a1af3399b08c4436a",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/a3d80dcd9c6e69e1bb12498a1af3399b08c4436a"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/630674b20be367dd379d2018d21b2c4913712ea9",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/630674b20be367dd379d2018d21b2c4913712ea9",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/630674b20be367dd379d2018d21b2c4913712ea9",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/630674b20be367dd379d2018d21b2c4913712ea9/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "2116c33212724cbbbe14ecef7ad31e4ea74b9ef1",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/2116c33212724cbbbe14ecef7ad31e4ea74b9ef1",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/2116c33212724cbbbe14ecef7ad31e4ea74b9ef1"
+      }
+    ]
+  },
+  {
+    "sha": "adefd3b9e01e3a45becbabbe553eeed889b3697c",
+    "node_id": "C_kwDOSoTVOdoAKGFkZWZkM2I5ZTAxZTNhNDViZWNiYWJiZTU1M2VlZWQ4ODliMzY5N2M",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:20:01Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:20:01Z"
+      },
+      "message": "feat: week4 라우팅·할루시네이션 방어 system prompt 추가\n\n메모성 입력은 add_personal_reference로 저장하고, 조회 질문은 출처에 따라\nsearch_personal_references(메모) 또는 search_saved_requests(일정)를 쓰도록 라우팅한다.\n또한 검색 결과가 없으면 지어내지 말고, 저장된 내용만 근거로 답하도록 방어 지시를 넣었다.",
+      "tree": {
+        "sha": "57db9f24ce6a6c89b5a7f4476519bd86dcc64f00",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/57db9f24ce6a6c89b5a7f4476519bd86dcc64f00"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/adefd3b9e01e3a45becbabbe553eeed889b3697c",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/adefd3b9e01e3a45becbabbe553eeed889b3697c",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/adefd3b9e01e3a45becbabbe553eeed889b3697c",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/adefd3b9e01e3a45becbabbe553eeed889b3697c/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "630674b20be367dd379d2018d21b2c4913712ea9",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/630674b20be367dd379d2018d21b2c4913712ea9",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/630674b20be367dd379d2018d21b2c4913712ea9"
+      }
+    ]
+  },
+  {
+    "sha": "41c74c066226a159794793ed80aab438dd3afea7",
+    "node_id": "C_kwDOSoTVOdoAKDQxYzc0YzA2NjIyNmExNTk3OTQ3OTNlZDgwYWFiNDM4ZGQzYWZlYTc",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:20:24Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:20:24Z"
+      },
+      "message": "style: week4 파일에 black·isort 적용\n\n3주차 리뷰에서 안내받은 대로 이번 주차부터 포맷을 도구로 통일한다.\n로직 변경 없이 import 정렬과 코드 포맷만 자동화 도구로 정리했다.",
+      "tree": {
+        "sha": "c49eb8f4ebc2807d3b2a57cf95aab74f9f090c75",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/c49eb8f4ebc2807d3b2a57cf95aab74f9f090c75"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/41c74c066226a159794793ed80aab438dd3afea7",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/41c74c066226a159794793ed80aab438dd3afea7",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/41c74c066226a159794793ed80aab438dd3afea7",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/41c74c066226a159794793ed80aab438dd3afea7/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "adefd3b9e01e3a45becbabbe553eeed889b3697c",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/adefd3b9e01e3a45becbabbe553eeed889b3697c",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/adefd3b9e01e3a45becbabbe553eeed889b3697c"
+      }
+    ]
+  },
+  {
+    "sha": "5c5edcf9a70fc6f0027fad5ae59d67d44328ce01",
+    "node_id": "C_kwDOSoTVOdoAKDVjNWVkY2Y5YTcwZmM2ZjAwMjdmYWQ1YWU1OWQ2N2Q0NDMyOGNlMDE",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:20:50Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:20:50Z"
+      },
+      "message": "test: week4 검색 tool 기본 동작 pytest 추가\n\nsafe_limit의 범위 보정과 search_saved_requests의 반환 계약(top-level rows)을 검증한다.\n외부 임베딩 API가 필요 없는 부분만 테스트해 네트워크 없이도 안정적으로 통과하도록 했다.\nconftest.py는 pytest가 프로젝트 루트를 import 경로에 포함하도록 한다.",
+      "tree": {
+        "sha": "d0fc9029adb7030e10cf20e8399c23c55abdce6f",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/d0fc9029adb7030e10cf20e8399c23c55abdce6f"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/5c5edcf9a70fc6f0027fad5ae59d67d44328ce01",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/5c5edcf9a70fc6f0027fad5ae59d67d44328ce01",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/5c5edcf9a70fc6f0027fad5ae59d67d44328ce01",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/5c5edcf9a70fc6f0027fad5ae59d67d44328ce01/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "41c74c066226a159794793ed80aab438dd3afea7",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/41c74c066226a159794793ed80aab438dd3afea7",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/41c74c066226a159794793ed80aab438dd3afea7"
+      }
+    ]
+  },
+  {
+    "sha": "09f8b0cb399845265eae610cb5aac2c99c2e9a5c",
+    "node_id": "C_kwDOSoTVOdoAKDA5ZjhiMGNiMzk5ODQ1MjY1ZWFlNjEwY2I1YWFjMmM5OWMyZTlhNWM",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:21:03Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-22T11:21:03Z"
+      },
+      "message": "docs: week4 학습 정리 및 RAG 할루시네이션 관찰 추가\n\n출처별 검색 tool 분리, 벡터DB/임베딩의 역할, 라우팅을 프롬프트로 정한 이유를 정리했다.\n또한 용도가 뭉개진 메모에서 발생한 RAG 할루시네이션 재현과, 프롬프트 방어가\n\"검색 0건\"은 막지만 \"부분 일치\"는 못 막는 한계를 기록했다.",
+      "tree": {
+        "sha": "f295c60bf8b23d562540c1b58f6859f8582a48a6",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/f295c60bf8b23d562540c1b58f6859f8582a48a6"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/09f8b0cb399845265eae610cb5aac2c99c2e9a5c",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/09f8b0cb399845265eae610cb5aac2c99c2e9a5c",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/09f8b0cb399845265eae610cb5aac2c99c2e9a5c",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/09f8b0cb399845265eae610cb5aac2c99c2e9a5c/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "5c5edcf9a70fc6f0027fad5ae59d67d44328ce01",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/5c5edcf9a70fc6f0027fad5ae59d67d44328ce01",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/5c5edcf9a70fc6f0027fad5ae59d67d44328ce01"
+      }
+    ]
+  }
+]

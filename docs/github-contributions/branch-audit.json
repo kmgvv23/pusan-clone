@@ -1,0 +1,307 @@
+[
+  {
+    "repository": "kakaotechcampus-4/kangwon-clone",
+    "branches_checked": 165,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/kyungpook-clone",
+    "branches_checked": 253,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/pusan-clone",
+    "branches_checked": 208,
+    "matching_branches": [
+      {
+        "branch": "kimmingyu/final",
+        "authored_commit_count": 6,
+        "latest_authored_commit": {
+          "oid": "9efd31cbe39a6fdfb8949e7cb057c5bb754dbfe4",
+          "url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/9efd31cbe39a6fdfb8949e7cb057c5bb754dbfe4",
+          "messageHeadline": "Merge pull request #208 from kakaotechcampus-4/kimmingyu/week6"
+        }
+      },
+      {
+        "branch": "kimmingyu/week2",
+        "authored_commit_count": 1,
+        "latest_authored_commit": {
+          "oid": "ee7529ab362a6e957f96c1aa7e8a754f0a907bbe",
+          "url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/ee7529ab362a6e957f96c1aa7e8a754f0a907bbe",
+          "messageHeadline": "Merge pull request #27 from kakaotechcampus-4/kimmingyu/week1"
+        }
+      },
+      {
+        "branch": "kimmingyu/week3",
+        "authored_commit_count": 2,
+        "latest_authored_commit": {
+          "oid": "d382ef6240888f4e6c962f2901832fe79200f8f7",
+          "url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/d382ef6240888f4e6c962f2901832fe79200f8f7",
+          "messageHeadline": "Merge pull request #59 from kakaotechcampus-4/kimmingyu/week2"
+        }
+      },
+      {
+        "branch": "kimmingyu/week4",
+        "authored_commit_count": 3,
+        "latest_authored_commit": {
+          "oid": "7cf9d431d410ac6166e036c2fb3b2e0701b220c2",
+          "url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/7cf9d431d410ac6166e036c2fb3b2e0701b220c2",
+          "messageHeadline": "Merge pull request #106 from kakaotechcampus-4/kimmingyu/week3"
+        }
+      },
+      {
+        "branch": "kimmingyu/week5",
+        "authored_commit_count": 4,
+        "latest_authored_commit": {
+          "oid": "45f1451b9b4d01ec7565684b6527d1b22b65f65d",
+          "url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/45f1451b9b4d01ec7565684b6527d1b22b65f65d",
+          "messageHeadline": "Merge pull request #128 from kakaotechcampus-4/kimmingyu/week4"
+        }
+      },
+      {
+        "branch": "kimmingyu/week6",
+        "authored_commit_count": 5,
+        "latest_authored_commit": {
+          "oid": "7f639e989aeb502232a7664899f5e2e52d4ae5a0",
+          "url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/7f639e989aeb502232a7664899f5e2e52d4ae5a0",
+          "messageHeadline": "Merge pull request #174 from kakaotechcampus-4/kimmingyu/week5"
+        }
+      }
+    ]
+  },
+  {
+    "repository": "kakaotechcampus-4/chonnam-clone",
+    "branches_checked": 167,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/chungnam-clone",
+    "branches_checked": 240,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/kakao_clone_coding_lecture",
+    "branches_checked": 1,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-kangwon-1",
+    "branches_checked": 24,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-kangwon-2",
+    "branches_checked": 95,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-kangwon-3",
+    "branches_checked": 22,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-kangwon-4",
+    "branches_checked": 26,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-kyungpook-1",
+    "branches_checked": 36,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-kyungpook-2",
+    "branches_checked": 63,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-kyungpook-3",
+    "branches_checked": 87,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-kyungpook-4",
+    "branches_checked": 19,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-kyungpook-5",
+    "branches_checked": 35,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-kyungpook-6",
+    "branches_checked": 14,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-pusan-1",
+    "branches_checked": 18,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-pusan-2",
+    "branches_checked": 84,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-pusan-3",
+    "branches_checked": 38,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-pusan-4",
+    "branches_checked": 66,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-pusan-5",
+    "branches_checked": 11,
+    "matching_branches": [
+      {
+        "branch": "develop",
+        "authored_commit_count": 4,
+        "latest_authored_commit": {
+          "oid": "93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "url": "https://github.com/kakaotechcampus-4/ktc4-pusan-5/commit/93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "messageHeadline": "Merge pull request #18 from kakaotechcampus-4/feature/analyst-reports…"
+        }
+      },
+      {
+        "branch": "feature/be-stock-sector",
+        "authored_commit_count": 4,
+        "latest_authored_commit": {
+          "oid": "93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "url": "https://github.com/kakaotechcampus-4/ktc4-pusan-5/commit/93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "messageHeadline": "Merge pull request #18 from kakaotechcampus-4/feature/analyst-reports…"
+        }
+      },
+      {
+        "branch": "feature/gold-price",
+        "authored_commit_count": 4,
+        "latest_authored_commit": {
+          "oid": "93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "url": "https://github.com/kakaotechcampus-4/ktc4-pusan-5/commit/93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "messageHeadline": "Merge pull request #18 from kakaotechcampus-4/feature/analyst-reports…"
+        }
+      },
+      {
+        "branch": "feature/mypage",
+        "authored_commit_count": 4,
+        "latest_authored_commit": {
+          "oid": "93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "url": "https://github.com/kakaotechcampus-4/ktc4-pusan-5/commit/93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "messageHeadline": "Merge pull request #18 from kakaotechcampus-4/feature/analyst-reports…"
+        }
+      },
+      {
+        "branch": "feature/news-excerpt-compare",
+        "authored_commit_count": 4,
+        "latest_authored_commit": {
+          "oid": "93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "url": "https://github.com/kakaotechcampus-4/ktc4-pusan-5/commit/93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "messageHeadline": "Merge pull request #18 from kakaotechcampus-4/feature/analyst-reports…"
+        }
+      },
+      {
+        "branch": "feature/news-excerpt-select",
+        "authored_commit_count": 4,
+        "latest_authored_commit": {
+          "oid": "93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "url": "https://github.com/kakaotechcampus-4/ktc4-pusan-5/commit/93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "messageHeadline": "Merge pull request #18 from kakaotechcampus-4/feature/analyst-reports…"
+        }
+      },
+      {
+        "branch": "feature/remove-kakao-email-consent",
+        "authored_commit_count": 4,
+        "latest_authored_commit": {
+          "oid": "93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "url": "https://github.com/kakaotechcampus-4/ktc4-pusan-5/commit/93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "messageHeadline": "Merge pull request #18 from kakaotechcampus-4/feature/analyst-reports…"
+        }
+      },
+      {
+        "branch": "feature/stock-analysis-runner",
+        "authored_commit_count": 4,
+        "latest_authored_commit": {
+          "oid": "93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "url": "https://github.com/kakaotechcampus-4/ktc4-pusan-5/commit/93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "messageHeadline": "Merge pull request #18 from kakaotechcampus-4/feature/analyst-reports…"
+        }
+      },
+      {
+        "branch": "feature/telegram-channel-collector",
+        "authored_commit_count": 4,
+        "latest_authored_commit": {
+          "oid": "93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "url": "https://github.com/kakaotechcampus-4/ktc4-pusan-5/commit/93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "messageHeadline": "Merge pull request #18 from kakaotechcampus-4/feature/analyst-reports…"
+        }
+      },
+      {
+        "branch": "feature/watchlist-api",
+        "authored_commit_count": 4,
+        "latest_authored_commit": {
+          "oid": "93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "url": "https://github.com/kakaotechcampus-4/ktc4-pusan-5/commit/93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "messageHeadline": "Merge pull request #18 from kakaotechcampus-4/feature/analyst-reports…"
+        }
+      },
+      {
+        "branch": "main",
+        "authored_commit_count": 4,
+        "latest_authored_commit": {
+          "oid": "93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "url": "https://github.com/kakaotechcampus-4/ktc4-pusan-5/commit/93e35bd5f1bddbc3c5beaf4a7491a0c53a353486",
+          "messageHeadline": "Merge pull request #18 from kakaotechcampus-4/feature/analyst-reports…"
+        }
+      }
+    ]
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-chonnam-1",
+    "branches_checked": 48,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-chonnam-2",
+    "branches_checked": 195,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-chonnam-3",
+    "branches_checked": 28,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-chonnam-4",
+    "branches_checked": 20,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-chungnam-1",
+    "branches_checked": 62,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-chungnam-2",
+    "branches_checked": 162,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-chungnam-3",
+    "branches_checked": 19,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-chungnam-4",
+    "branches_checked": 76,
+    "matching_branches": []
+  },
+  {
+    "repository": "kakaotechcampus-4/ktc4-chungnam-5",
+    "branches_checked": 56,
+    "matching_branches": []
+  }
+]

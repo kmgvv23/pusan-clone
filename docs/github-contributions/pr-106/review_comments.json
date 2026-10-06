@@ -1,0 +1,71 @@
+[
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3595408766",
+    "pull_request_review_id": 4713670145,
+    "id": 3595408766,
+    "node_id": "PRRC_kwDOSoTVOc7WTZV-",
+    "diff_hunk": "@@ -321,9 +393,28 @@ def personal_create_schedule(\n ) -> str:\n     \"\"\"Nana의 개인 일정을 생성하고 Week 3+ 앱 SQLite DB에도 저장합니다.\"\"\"\n \n-    # TODO: Week 1 임시 일정 tool을 호출한 뒤 결과를 StructuredRequest로 바꿔 SQLite에도 저장하세요.\n-    # TODO: created 결과에 structured_request와 sqlite_save를 합쳐 JSON 문자열로 반환하세요.\n-    ...\n+    created = json.loads(\n+        week01_personal_create_schedule.invoke(\n+            {\n+                \"title\": title,\n+                \"date\": date,\n+                \"start_time\": start_time,\n+                \"end_time\": end_time,\n+                \"attendees\": attendees or [],\n+            }\n+        )\n+    )\n+    schedule = created.get(\"created_schedule\", {})\n+    save_input = structured_request_from_week01_schedule(schedule)\n+    sqlite_save = _store().save_structured_request(save_input.model_dump())",
+    "path": "student_parts/week03_build_nanas_logbook.py",
+    "commit_id": "6aa23a05f05909fdd061bbd875b3c2fa3cb19653",
+    "original_commit_id": "6aa23a05f05909fdd061bbd875b3c2fa3cb19653",
+    "user": {
+      "login": "nno0obb",
+      "id": 146364491,
+      "node_id": "U_kgDOCLlYSw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/146364491?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nno0obb",
+      "html_url": "https://github.com/nno0obb",
+      "followers_url": "https://api.github.com/users/nno0obb/followers",
+      "following_url": "https://api.github.com/users/nno0obb/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nno0obb/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nno0obb/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nno0obb/subscriptions",
+      "organizations_url": "https://api.github.com/users/nno0obb/orgs",
+      "repos_url": "https://api.github.com/users/nno0obb/repos",
+      "events_url": "https://api.github.com/users/nno0obb/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nno0obb/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "여기서도 `tool_result` 를 사용해볼 수 있지 않을까요..?\n`save_structured_request_payload` helper 함수 사용도 괜찮을 것 같은데\n적용 전과 후에 trace 가 어떻게 달라지는지 테스트를 해보면 좋을 것 같습니다..!",
+    "created_at": "2026-07-16T12:32:17Z",
+    "updated_at": "2026-07-19T14:02:17Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/106#discussion_r3595408766",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/106",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3595408766"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/106#discussion_r3595408766"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/106"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3595408766/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 409,
+    "side": "RIGHT",
+    "author_association": "MEMBER",
+    "original_position": 160,
+    "position": 1,
+    "subject_type": "line"
+  }
+]

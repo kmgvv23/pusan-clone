@@ -1,0 +1,419 @@
+[
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3729630339",
+    "pull_request_review_id": 4875685977,
+    "id": 3729630339,
+    "node_id": "PRRC_kwDOSoTVOc7eTaSD",
+    "diff_hunk": "@@ -197,9 +198,14 @@ def week06_prompt_parts() -> list[str]:\n \n     return [\n         *week05_prompt_parts(),\n-        # TODO: Week 6 supervisor agent system prompt를 자유롭게 추가하세요.\n-        #   - supervisor는 직접 업무를 처리하지 않고 nana_agent 또는 kana_agent로만 위임합니다.\n-        #   - 어떤 요청이 Nana 담당이고 어떤 요청이 Kana 담당인지 판단 기준을 적습니다.\n+        \"이번 주차부터 너는 직접 일정을 처리하는 agent가 아니라 supervisor다. \"\n+        \"이전 주차에서 직접 tool을 호출하라고 안내한 지시는 하위 에이전트에게 적용되고, \"",
+    "path": "student_parts/week06_kanamate_decides_schedule.py",
+    "commit_id": "3d665aebeeb8b891cffef2579ae7fe24b4325494",
+    "original_commit_id": "12ad05a158530faebd44d87f6296f9252c6c27c9",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "`week05_prompt_parts()`의 마지막 조각에 \"여러 사람의 최종 회의 시간을 확정하는 것은 이번 주차 범위가 아니므로 ... 설명하는 데까지만 답한다\"가 있습니다(`week05_load_kanas_past_conversations.py:563`). 이번 주차 목표와 반대되는 지시가 supervisor에게 그대로 들어갑니다.\n\n직접 쓰신 문장이 뒤에 있어서 지금 당장 깨지지는 않지만, 답변이 확정 시간을 빠뜨리는 쪽으로 흔들릴 수 있습니다. 여기에 한 문장 더 넣으면 정리됩니다.\n\n```python\n        \"이전 주차에서 최종 회의 시간 확정은 범위가 아니라고 안내한 지시는 이번 주차에 해제된다. \"\n        \"kana_agent가 final_slot을 돌려주면 그 확정 시간을 최종 답변에 반드시 포함한다.\",\n```",
+    "created_at": "2026-08-06T14:25:38Z",
+    "updated_at": "2026-08-06T14:34:18Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#discussion_r3729630339",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3729630339"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#discussion_r3729630339"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3729630339/reactions",
+      "total_count": 1,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 1
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 202,
+    "original_line": 202,
+    "side": "RIGHT",
+    "author_association": "MEMBER",
+    "original_position": 27,
+    "position": 27,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3729630351",
+    "pull_request_review_id": 4875685977,
+    "id": 3729630351,
+    "node_id": "PRRC_kwDOSoTVOc7eTaSP",
+    "diff_hunk": "@@ -0,0 +1,125 @@\n+\"\"\"Week 6 공통 시간 후보 검증과 최종 결정 tool 테스트.\n+\n+LLM 호출이나 MCP subprocess가 필요 없는 경로만 검증한다.\n+busy_rows를 직접 넘겨 후보 검증 규칙을, 선택 값을 직접 넘겨 최종 결정 기록을 확인한다.\n+실행: uv run --with pytest python -m pytest -q tests/test_week06.py\n+\"\"\"\n+\n+import json\n+\n+from student_parts.week06_kanamate_decides_schedule import (\n+    agent_tool_names,\n+    decide_final_slot,\n+    find_common_available_slots,\n+)\n+\n+BUSY_ROWS = [\n+    {\n+        \"member_name\": \"나\",\n+        \"date\": \"2026-08-10\",\n+        \"start_time\": \"14:00\",\n+        \"end_time\": \"15:00\",\n+        \"title\": \"팀 회의\",\n+    },\n+    {\n+        \"member_name\": \"민준\",\n+        \"date\": \"2026-08-10\",\n+        \"start_time\": \"10:00\",\n+        \"end_time\": \"11:00\",\n+        \"title\": \"API 리뷰\",\n+    },\n+]\n+\n+\n+def _candidate(start_time: str, end_time: str, reason: str = \"후보\"):\n+    return {\n+        \"date\": \"2026-08-10\",\n+        \"start_time\": start_time,\n+        \"end_time\": end_time,\n+        \"duration_minutes\": 60,\n+        \"reason\": reason,\n+    }\n+\n+\n+def _find_common(candidate_slots):\n+    return json.loads(\n+        find_common_available_slots.invoke(\n+            {\n+                \"member_names\": [\"민준\"],\n+                \"date_from\": \"2026-08-10\",\n+                \"date_to\": \"2026-08-10\",\n+                \"busy_rows\": BUSY_ROWS,\n+                \"candidate_slots\": candidate_slots,\n+            }\n+        )\n+    )\n+\n+\n+def test_busy_time_candidate_is_rejected():\n+    # busy_rows와 겹치는 후보는 검증에서 제외되고, 비는 시간만 남는다.\n+    payload = _find_common([_candidate(\"09:00\", \"10:00\"), _candidate(\"14:00\", \"15:00\")])\n+    start_times = [slot[\"start_time\"] for slot in payload[\"candidate_slots\"]]\n+    assert start_times == [\"09:00\"]\n+\n+\n+def test_candidate_outside_workday_is_rejected():\n+    # 업무 시간(기본 09:00~18:00) 밖의 후보도 남지 않는다.\n+    payload = _find_common([_candidate(\"07:00\", \"08:00\")])\n+    assert payload[\"candidate_slots\"] == []\n+\n+\n+def test_iso_datetime_date_bound_is_normalized():\n+    # date_from/date_to에 ISO datetime이 들어와도 날짜 부분만 사용한다.\n+    payload = json.loads(\n+        find_common_available_slots.invoke(\n+            {\n+                \"member_names\": [\"민준\"],\n+                \"date_from\": \"2026-08-10T00:00:00\",\n+                \"date_to\": \"2026-08-10T23:59:59\",\n+                \"busy_rows\": BUSY_ROWS,\n+                \"candidate_slots\": [_candidate(\"09:00\", \"10:00\")],\n+            }\n+        )\n+    )\n+    assert len(payload[\"candidate_slots\"]) == 1",
+    "path": "tests/test_week06.py",
+    "commit_id": "3d665aebeeb8b891cffef2579ae7fe24b4325494",
+    "original_commit_id": "12ad05a158530faebd44d87f6296f9252c6c27c9",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "이 검사는 후보가 1개 남았는지만 봅니다. 그런데 날짜를 잘라내는 처리가 `fixed/schedule_decision.py:58-59`에도 있어서, 직접 쓰신 `normalize_date_bound`를 지워도 결과는 그대로 1개입니다. 이 테스트는 통과하지만 직접 쓰신 처리가 동작했는지까지는 가려내지 못한다는 점만 알아두시면 됩니다.",
+    "created_at": "2026-08-06T14:25:38Z",
+    "updated_at": "2026-08-06T14:34:18Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#discussion_r3729630351",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3729630351"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#discussion_r3729630351"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3729630351/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 84,
+    "original_line": 84,
+    "side": "RIGHT",
+    "author_association": "MEMBER",
+    "original_position": 84,
+    "position": 84,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3729630358",
+    "pull_request_review_id": 4875685977,
+    "id": 3729630358,
+    "node_id": "PRRC_kwDOSoTVOc7eTaSW",
+    "diff_hunk": "@@ -288,6 +297,46 @@ def _structured_request_from_schedule_row(row: dict[str, Any]) -> StructuredRequ\n     )\n \n \n+def _my_schedule_notes(request: StructuredRequest) -> str:\n+    \"\"\"내 일정 row가 개인 일정인지, 참석자가 있는 그룹 일정인지 설명합니다.\"\"\"\n+\n+    if request.kind != \"group_schedule\":\n+        return \"Nana 개인 일정\"\n+    members = [\n+        str(member).strip() for member in (request.members or []) if str(member).strip()\n+    ]\n+    return (\n+        f\"Nana 그룹 일정 · 참석자: {', '.join(members)}\"\n+        if members\n+        else \"Nana 그룹 일정\"\n+    )\n+\n+\n+def _dedupe_schedule_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:",
+    "path": "student_parts/week05_load_kanas_past_conversations.py",
+    "commit_id": "3d665aebeeb8b891cffef2579ae7fe24b4325494",
+    "original_commit_id": "12ad05a158530faebd44d87f6296f9252c6c27c9",
+    "user": {
+      "login": "doheelab-coder",
+      "id": 261317732,
+      "node_id": "U_kgDOD5NkZA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/261317732?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/doheelab-coder",
+      "html_url": "https://github.com/doheelab-coder",
+      "followers_url": "https://api.github.com/users/doheelab-coder/followers",
+      "following_url": "https://api.github.com/users/doheelab-coder/following{/other_user}",
+      "gists_url": "https://api.github.com/users/doheelab-coder/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/doheelab-coder/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/doheelab-coder/subscriptions",
+      "organizations_url": "https://api.github.com/users/doheelab-coder/orgs",
+      "repos_url": "https://api.github.com/users/doheelab-coder/repos",
+      "events_url": "https://api.github.com/users/doheelab-coder/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/doheelab-coder/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "이 helper가 막으려는 중복은 현재 구현에서는 생기지 않습니다. `_collect_member_schedules`가 외부 조회 대상에서 \"나\"를 이미 빼고 있어서, 공유 저장소의 \"나\" 복사본은 애초에 들어오지 않습니다.\n\n동작에는 문제가 없고 안전망으로는 쓸모가 있습니다. 다만 PR 본문에 적으신 중복 원인은 실제와 다르다는 점만 알아두시면 됩니다.",
+    "created_at": "2026-08-06T14:25:38Z",
+    "updated_at": "2026-08-06T14:34:18Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#discussion_r3729630358",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3729630358"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#discussion_r3729630358"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3729630358/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 315,
+    "original_line": 315,
+    "side": "RIGHT",
+    "author_association": "MEMBER",
+    "original_position": 48,
+    "position": 48,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3742988696",
+    "pull_request_review_id": 4890749569,
+    "id": 3742988696,
+    "node_id": "PRRC_kwDOSoTVOc7fGXmY",
+    "diff_hunk": "@@ -197,9 +198,14 @@ def week06_prompt_parts() -> list[str]:\n \n     return [\n         *week05_prompt_parts(),\n-        # TODO: Week 6 supervisor agent system prompt를 자유롭게 추가하세요.\n-        #   - supervisor는 직접 업무를 처리하지 않고 nana_agent 또는 kana_agent로만 위임합니다.\n-        #   - 어떤 요청이 Nana 담당이고 어떤 요청이 Kana 담당인지 판단 기준을 적습니다.\n+        \"이번 주차부터 너는 직접 일정을 처리하는 agent가 아니라 supervisor다. \"\n+        \"이전 주차에서 직접 tool을 호출하라고 안내한 지시는 하위 에이전트에게 적용되고, \"",
+    "path": "student_parts/week06_kanamate_decides_schedule.py",
+    "commit_id": "3d665aebeeb8b891cffef2579ae7fe24b4325494",
+    "original_commit_id": "12ad05a158530faebd44d87f6296f9252c6c27c9",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "5주차 프롬프트 파트는 미쳐 생각 못한 것 같습니다. 지적해주셔서 감사합니다!",
+    "created_at": "2026-08-09T07:11:42Z",
+    "updated_at": "2026-08-09T07:11:42Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#discussion_r3742988696",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3742988696"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#discussion_r3742988696"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3742988696/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 202,
+    "original_line": 202,
+    "side": "RIGHT",
+    "in_reply_to_id": 3729630339,
+    "author_association": "MEMBER",
+    "original_position": 27,
+    "position": 27,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3743048696",
+    "pull_request_review_id": 4890790545,
+    "id": 3743048696,
+    "node_id": "PRRC_kwDOSoTVOc7fGmP4",
+    "diff_hunk": "@@ -0,0 +1,125 @@\n+\"\"\"Week 6 공통 시간 후보 검증과 최종 결정 tool 테스트.\n+\n+LLM 호출이나 MCP subprocess가 필요 없는 경로만 검증한다.\n+busy_rows를 직접 넘겨 후보 검증 규칙을, 선택 값을 직접 넘겨 최종 결정 기록을 확인한다.\n+실행: uv run --with pytest python -m pytest -q tests/test_week06.py\n+\"\"\"\n+\n+import json\n+\n+from student_parts.week06_kanamate_decides_schedule import (\n+    agent_tool_names,\n+    decide_final_slot,\n+    find_common_available_slots,\n+)\n+\n+BUSY_ROWS = [\n+    {\n+        \"member_name\": \"나\",\n+        \"date\": \"2026-08-10\",\n+        \"start_time\": \"14:00\",\n+        \"end_time\": \"15:00\",\n+        \"title\": \"팀 회의\",\n+    },\n+    {\n+        \"member_name\": \"민준\",\n+        \"date\": \"2026-08-10\",\n+        \"start_time\": \"10:00\",\n+        \"end_time\": \"11:00\",\n+        \"title\": \"API 리뷰\",\n+    },\n+]\n+\n+\n+def _candidate(start_time: str, end_time: str, reason: str = \"후보\"):\n+    return {\n+        \"date\": \"2026-08-10\",\n+        \"start_time\": start_time,\n+        \"end_time\": end_time,\n+        \"duration_minutes\": 60,\n+        \"reason\": reason,\n+    }\n+\n+\n+def _find_common(candidate_slots):\n+    return json.loads(\n+        find_common_available_slots.invoke(\n+            {\n+                \"member_names\": [\"민준\"],\n+                \"date_from\": \"2026-08-10\",\n+                \"date_to\": \"2026-08-10\",\n+                \"busy_rows\": BUSY_ROWS,\n+                \"candidate_slots\": candidate_slots,\n+            }\n+        )\n+    )\n+\n+\n+def test_busy_time_candidate_is_rejected():\n+    # busy_rows와 겹치는 후보는 검증에서 제외되고, 비는 시간만 남는다.\n+    payload = _find_common([_candidate(\"09:00\", \"10:00\"), _candidate(\"14:00\", \"15:00\")])\n+    start_times = [slot[\"start_time\"] for slot in payload[\"candidate_slots\"]]\n+    assert start_times == [\"09:00\"]\n+\n+\n+def test_candidate_outside_workday_is_rejected():\n+    # 업무 시간(기본 09:00~18:00) 밖의 후보도 남지 않는다.\n+    payload = _find_common([_candidate(\"07:00\", \"08:00\")])\n+    assert payload[\"candidate_slots\"] == []\n+\n+\n+def test_iso_datetime_date_bound_is_normalized():\n+    # date_from/date_to에 ISO datetime이 들어와도 날짜 부분만 사용한다.\n+    payload = json.loads(\n+        find_common_available_slots.invoke(\n+            {\n+                \"member_names\": [\"민준\"],\n+                \"date_from\": \"2026-08-10T00:00:00\",\n+                \"date_to\": \"2026-08-10T23:59:59\",\n+                \"busy_rows\": BUSY_ROWS,\n+                \"candidate_slots\": [_candidate(\"09:00\", \"10:00\")],\n+            }\n+        )\n+    )\n+    assert len(payload[\"candidate_slots\"]) == 1",
+    "path": "tests/test_week06.py",
+    "commit_id": "3d665aebeeb8b891cffef2579ae7fe24b4325494",
+    "original_commit_id": "12ad05a158530faebd44d87f6296f9252c6c27c9",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "fixed까진 전체 확인 못했던 것 같습니다. 말씀해주셔서 감사합니다.",
+    "created_at": "2026-08-09T07:37:49Z",
+    "updated_at": "2026-08-09T07:37:49Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#discussion_r3743048696",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3743048696"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#discussion_r3743048696"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3743048696/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 84,
+    "original_line": 84,
+    "side": "RIGHT",
+    "in_reply_to_id": 3729630351,
+    "author_association": "MEMBER",
+    "original_position": 84,
+    "position": 84,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3743051514",
+    "pull_request_review_id": 4890792193,
+    "id": 3743051514,
+    "node_id": "PRRC_kwDOSoTVOc7fGm76",
+    "diff_hunk": "@@ -288,6 +297,46 @@ def _structured_request_from_schedule_row(row: dict[str, Any]) -> StructuredRequ\n     )\n \n \n+def _my_schedule_notes(request: StructuredRequest) -> str:\n+    \"\"\"내 일정 row가 개인 일정인지, 참석자가 있는 그룹 일정인지 설명합니다.\"\"\"\n+\n+    if request.kind != \"group_schedule\":\n+        return \"Nana 개인 일정\"\n+    members = [\n+        str(member).strip() for member in (request.members or []) if str(member).strip()\n+    ]\n+    return (\n+        f\"Nana 그룹 일정 · 참석자: {', '.join(members)}\"\n+        if members\n+        else \"Nana 그룹 일정\"\n+    )\n+\n+\n+def _dedupe_schedule_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:",
+    "path": "student_parts/week05_load_kanas_past_conversations.py",
+    "commit_id": "3d665aebeeb8b891cffef2579ae7fe24b4325494",
+    "original_commit_id": "12ad05a158530faebd44d87f6296f9252c6c27c9",
+    "user": {
+      "login": "kmgvv23",
+      "id": 123060316,
+      "node_id": "U_kgDOB1XAXA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123060316?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kmgvv23",
+      "html_url": "https://github.com/kmgvv23",
+      "followers_url": "https://api.github.com/users/kmgvv23/followers",
+      "following_url": "https://api.github.com/users/kmgvv23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kmgvv23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kmgvv23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kmgvv23/subscriptions",
+      "organizations_url": "https://api.github.com/users/kmgvv23/orgs",
+      "repos_url": "https://api.github.com/users/kmgvv23/repos",
+      "events_url": "https://api.github.com/users/kmgvv23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kmgvv23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "공지의 week5 변경 반영에만 집중하다 보니, 정작 제 코드와 비교가 소홀 했던 것 같습니다. 앞으로는 가이드를 반영할 때 제 코드 기준으로 다시 확인하는 습관을 들이겠습니다.\n\n",
+    "created_at": "2026-08-09T07:39:04Z",
+    "updated_at": "2026-08-09T07:39:05Z",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#discussion_r3743051514",
+    "pull_request_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3743051514"
+      },
+      "html": {
+        "href": "https://github.com/kakaotechcampus-4/pusan-clone/pull/208#discussion_r3743051514"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/208"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/pulls/comments/3743051514/reactions",
+      "total_count": 1,
+      "+1": 1,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 315,
+    "original_line": 315,
+    "side": "RIGHT",
+    "in_reply_to_id": 3729630358,
+    "author_association": "MEMBER",
+    "original_position": 48,
+    "position": 48,
+    "subject_type": "line"
+  }
+]

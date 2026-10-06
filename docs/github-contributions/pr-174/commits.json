@@ -1,0 +1,548 @@
+[
+  {
+    "sha": "ed0ea82cd40e7a0fd05dfd630b598d7293e9f4be",
+    "node_id": "C_kwDOSoTVOdoAKGVkMGVhODJjZDQwZTdhMGZkMDVkZmQ2MzBiNTk4ZDcyOTNlOWY0YmU",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:54:31Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:54:31Z"
+      },
+      "message": "feat: week4 심화 대화 RAG 검색 구현\n\nsearch_conversation_messages_dict는 SQLite 대화를 ConversationRAGStore로 lazy sync한 뒤,\nconversation_id를 지정하지 않으면 현재 대화를 제외하고 검색해 \"방금 한 말\"이 과거 기억처럼\n섞이지 않게 한다. rows/hits/context/sync를 함께 반환하고 tool은 이를 JSON으로 감싼다.",
+      "tree": {
+        "sha": "3fb4eafe8a7be7548e01a6b8622701273892a8ba",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/3fb4eafe8a7be7548e01a6b8622701273892a8ba"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/ed0ea82cd40e7a0fd05dfd630b598d7293e9f4be",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/ed0ea82cd40e7a0fd05dfd630b598d7293e9f4be",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/ed0ea82cd40e7a0fd05dfd630b598d7293e9f4be",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/ed0ea82cd40e7a0fd05dfd630b598d7293e9f4be/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "014b6a5ece8c5525cd1e9df64a66d2160fc32e0f",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/014b6a5ece8c5525cd1e9df64a66d2160fc32e0f",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/014b6a5ece8c5525cd1e9df64a66d2160fc32e0f"
+      }
+    ]
+  },
+  {
+    "sha": "10258662544a41755dd206dbe0941a584e2d45e6",
+    "node_id": "C_kwDOSoTVOdoAKDEwMjU4NjYyNTQ0YTQxNzU1ZGQyMDZkYmUwOTQxYTU4NGUyZDQ1ZTY",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:54:31Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:54:31Z"
+      },
+      "message": "feat: week4 심화 통합 검색(search_nana_memory) 구현\n\n개인 참고자료 hit와 SQLite 일정 chunk를 한 번에 묶어 context 문자열을 만든다.\n날짜/참석자 조건을 함께 걸어야 해서 schedules 테이블을 직접 조회하고,\n결과를 chunk_id/content/metadata 구조로 정리해 LLM이 근거로 읽기 쉽게 했다.",
+      "tree": {
+        "sha": "0a531c7c39b7e3c2192923fca2b279639e19d0f9",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/0a531c7c39b7e3c2192923fca2b279639e19d0f9"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/10258662544a41755dd206dbe0941a584e2d45e6",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/10258662544a41755dd206dbe0941a584e2d45e6",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/10258662544a41755dd206dbe0941a584e2d45e6",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/10258662544a41755dd206dbe0941a584e2d45e6/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "ed0ea82cd40e7a0fd05dfd630b598d7293e9f4be",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/ed0ea82cd40e7a0fd05dfd630b598d7293e9f4be",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/ed0ea82cd40e7a0fd05dfd630b598d7293e9f4be"
+      }
+    ]
+  },
+  {
+    "sha": "e93055de5b764da17646d568b4af45ec599380ed",
+    "node_id": "C_kwDOSoTVOdoAKGU5MzA1NWRlNWI3NjRkYTE3NjQ2ZDU2OGI0YWY0NWVjNTk5MzgwZWQ",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:55:24Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:55:24Z"
+      },
+      "message": "feat: 외부 대화 검색/로드/일정추출 MCP wrapper 구현\n\nsearch_previous_conversations와 extract_schedules_from_history는 call_mcp_tool_sync 결과\n문자열을 그대로 전달하고, load_conversation_messages는 call_external_tool_payload로 받은\npayload를 가공 없이 JSON으로 감싼다. 멤버 이름·날짜 정규화는 외부 store/MCP 경계에서\n한 번만 하므로 wrapper에서 중복 변환하지 않았다.",
+      "tree": {
+        "sha": "d35f0029c0a6a3c3cbe863fd6bd34897c561f643",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/d35f0029c0a6a3c3cbe863fd6bd34897c561f643"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/e93055de5b764da17646d568b4af45ec599380ed",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/e93055de5b764da17646d568b4af45ec599380ed",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/e93055de5b764da17646d568b4af45ec599380ed",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/e93055de5b764da17646d568b4af45ec599380ed/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "10258662544a41755dd206dbe0941a584e2d45e6",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/10258662544a41755dd206dbe0941a584e2d45e6",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/10258662544a41755dd206dbe0941a584e2d45e6"
+      }
+    ]
+  },
+  {
+    "sha": "cf90f1842d37da82a81815ca01b8eaccbdcb5aad",
+    "node_id": "C_kwDOSoTVOdoAKGNmOTBmMTg0MmQzN2RhODJhODE4MTVjYTAxYjhlYWNjYmRjYjVhYWQ",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:56:19Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:56:19Z"
+      },
+      "message": "feat: 공유 일정 조회(list_shared_schedules) MCP wrapper 구현\n\n공유 일정 저장소 row를 멤버/날짜/대화 ID 필터로 조회한다.\nWeek 6 Kana 하위 agent도 이 tool을 그대로 재사용하므로 MCP 결과를 가공 없이 전달한다.",
+      "tree": {
+        "sha": "2740fc4bd61851288e093d8b747d3b5688d4f727",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/2740fc4bd61851288e093d8b747d3b5688d4f727"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/cf90f1842d37da82a81815ca01b8eaccbdcb5aad",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/cf90f1842d37da82a81815ca01b8eaccbdcb5aad",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/cf90f1842d37da82a81815ca01b8eaccbdcb5aad",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/cf90f1842d37da82a81815ca01b8eaccbdcb5aad/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "e93055de5b764da17646d568b4af45ec599380ed",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/e93055de5b764da17646d568b4af45ec599380ed",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/e93055de5b764da17646d568b4af45ec599380ed"
+      }
+    ]
+  },
+  {
+    "sha": "f83e3c272c521633d6550cef8ff3628a035a4cc0",
+    "node_id": "C_kwDOSoTVOdoAKGY4M2UzYzI3MmM1MjE2MzNkNjU1MGNlZjhmZjM2MjhhMDM1YTRjYzA",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:56:19Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:56:19Z"
+      },
+      "message": "feat: week5 심화 공유 일정 생성/삭제 MCP wrapper 구현\n\ncreate_shared_schedule과 delete_shared_schedule을 MCP tool 호출로 감싼다.\nschedule_id와 source_conversation_id를 그대로 넘겨야 이후 수정·삭제 동기화가 가능하므로\nwrapper에서 값을 임의로 채우거나 생략하지 않았다.",
+      "tree": {
+        "sha": "816f1b47131d5bdf979d6270ef3cbde42be9e8e0",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/816f1b47131d5bdf979d6270ef3cbde42be9e8e0"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/f83e3c272c521633d6550cef8ff3628a035a4cc0",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/f83e3c272c521633d6550cef8ff3628a035a4cc0",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/f83e3c272c521633d6550cef8ff3628a035a4cc0",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/f83e3c272c521633d6550cef8ff3628a035a4cc0/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "cf90f1842d37da82a81815ca01b8eaccbdcb5aad",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/cf90f1842d37da82a81815ca01b8eaccbdcb5aad",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/cf90f1842d37da82a81815ca01b8eaccbdcb5aad"
+      }
+    ]
+  },
+  {
+    "sha": "f2f88e3a1746e70ca15c06d9f285560809efde30",
+    "node_id": "C_kwDOSoTVOdoAKGYyZjg4ZTNhMTc0NmU3MGNhMTVjMDZkOWYyODU1NjA4MDllZmRlMzA",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:57:59Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:57:59Z"
+      },
+      "message": "feat: 내 일정과 외부 멤버 busy-time 수집(collect_member_schedules) 구현\n\n_personal_schedules_for_current_scope는 앱 SQLite 저장 일정에 현재 대화의 임시 일정만\nschedule_id 기준으로 중복 없이 더한다.\n_collect_member_schedules는 출처를 섞지 않고 \"나\"는 앱 DB에서, 외부 멤버는 MCP에서 읽는다.\n\"나\"는 외부 저장소에 없는 사람이라 MCP 조회 대상에서 제외하고, 내 일정에는 날짜 범위 필터를\n적용한 뒤 두 출처를 같은 row 구조로 합쳐 날짜·시간순으로 정렬한다.",
+      "tree": {
+        "sha": "550754496b91b195c971d878aaa8617c10a5929c",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/550754496b91b195c971d878aaa8617c10a5929c"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/f2f88e3a1746e70ca15c06d9f285560809efde30",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/f2f88e3a1746e70ca15c06d9f285560809efde30",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/f2f88e3a1746e70ca15c06d9f285560809efde30",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/f2f88e3a1746e70ca15c06d9f285560809efde30/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "f83e3c272c521633d6550cef8ff3628a035a4cc0",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/f83e3c272c521633d6550cef8ff3628a035a4cc0",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/f83e3c272c521633d6550cef8ff3628a035a4cc0"
+      }
+    ]
+  },
+  {
+    "sha": "2086cfd5e091b5247e97fd1aa5efa47eaaa51373",
+    "node_id": "C_kwDOSoTVOdoAKDIwODZjZmQ1ZTA5MWI1MjQ3ZTk3ZmQxYWE1ZWZhNDdlYWFhNTEzNzM",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:58:48Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:58:48Z"
+      },
+      "message": "feat: week5 외부 멤버 일정 라우팅 system prompt 추가\n\n내 개인 정보는 이전 주차 도구로, 외부 멤버의 대화·일정은 Week 5 MCP wrapper로 처리하도록\n경계를 명시했다. 특히 이름이 비슷한 search_conversation_messages(내 앱 대화)와\nsearch_previous_conversations(외부 멤버 대화)가 서로 다른 저장소라는 점을 구분해 적었고,\n조율 질문에는 collect_member_schedules를 쓰도록 했다.\n조회 결과가 비면 지어내지 않도록 하고, 최종 시간 확정은 Week 6 범위임을 명시했다.",
+      "tree": {
+        "sha": "1f44af81279a916eaa33c76a6018a884c9128537",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/1f44af81279a916eaa33c76a6018a884c9128537"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/2086cfd5e091b5247e97fd1aa5efa47eaaa51373",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/2086cfd5e091b5247e97fd1aa5efa47eaaa51373",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/2086cfd5e091b5247e97fd1aa5efa47eaaa51373",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/2086cfd5e091b5247e97fd1aa5efa47eaaa51373/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "f2f88e3a1746e70ca15c06d9f285560809efde30",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/f2f88e3a1746e70ca15c06d9f285560809efde30",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/f2f88e3a1746e70ca15c06d9f285560809efde30"
+      }
+    ]
+  },
+  {
+    "sha": "e7154e70541abee35e9102fa4d759535f4f982cb",
+    "node_id": "C_kwDOSoTVOdoAKGU3MTU0ZTcwNTQxYWJlZTM1ZTkxMDJmYTRkNzU5NTM1ZjRmOTgyY2I",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:58:59Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:58:59Z"
+      },
+      "message": "style: week5 파일에 black·isort 적용\n\n로직 변경 없이 import 정렬과 코드 포맷만 자동화 도구로 정리했다.",
+      "tree": {
+        "sha": "c7d2cb2f0090d8d15018deadebfa6d5351e0f447",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/c7d2cb2f0090d8d15018deadebfa6d5351e0f447"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/e7154e70541abee35e9102fa4d759535f4f982cb",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/e7154e70541abee35e9102fa4d759535f4f982cb",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/e7154e70541abee35e9102fa4d759535f4f982cb",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/e7154e70541abee35e9102fa4d759535f4f982cb/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "2086cfd5e091b5247e97fd1aa5efa47eaaa51373",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/2086cfd5e091b5247e97fd1aa5efa47eaaa51373",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/2086cfd5e091b5247e97fd1aa5efa47eaaa51373"
+      }
+    ]
+  },
+  {
+    "sha": "9579b167332d66cd75ed9a6c60c9d67cd962d31e",
+    "node_id": "C_kwDOSoTVOdoAKDk1NzliMTY3MzMyZDY2Y2Q3NWVkOWE2YzYwYzlkNjdjZDk2MmQzMWU",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:59:38Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T12:59:38Z"
+      },
+      "message": "test: week5 멤버 일정 수집 helper pytest 추가\n\nMCP subprocess를 띄우지 않는 경로만 검증한다.\nmember_names가 \"나\"뿐이면 외부 조회 없이 내 일정만 모으는지, 날짜 범위 밖 일정이 걸러지는지,\nrows가 날짜·시간순으로 정렬되는지, row 구조가 외부 멤버 row와 같은 키를 갖는지 확인한다.",
+      "tree": {
+        "sha": "956bbc027138ce4e16d5806ab03d1f1449993a6f",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/956bbc027138ce4e16d5806ab03d1f1449993a6f"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/9579b167332d66cd75ed9a6c60c9d67cd962d31e",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/9579b167332d66cd75ed9a6c60c9d67cd962d31e",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/9579b167332d66cd75ed9a6c60c9d67cd962d31e",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/9579b167332d66cd75ed9a6c60c9d67cd962d31e/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "e7154e70541abee35e9102fa4d759535f4f982cb",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/e7154e70541abee35e9102fa4d759535f4f982cb",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/e7154e70541abee35e9102fa4d759535f4f982cb"
+      }
+    ]
+  },
+  {
+    "sha": "4561142c2c753f194478e383d85e3120bffa0fd4",
+    "node_id": "C_kwDOSoTVOdoAKDQ1NjExNDJjMmM3NTNmMTk0NDc4ZTM4M2Q4NWUzMTIwYmZmYTBmZDQ",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T13:00:17Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-07-29T13:00:17Z"
+      },
+      "message": "docs: week5 학습 정리 추가\n\nMCP wrapper 주차의 책임 경계(SQL을 짜지 않고 결과를 전달), 정규화를 경계에서 한 번만 하는 이유,\ncollect_member_schedules에서 멤버별로 권위 있는 출처 하나씩만 읽고 MCP 조회에서 \"나\"를 제외한 판단,\n이름이 비슷한 tool의 라우팅 문제를 정리했다.",
+      "tree": {
+        "sha": "ac5c183fe41e586e08699e397dafd1a2c01763c1",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/ac5c183fe41e586e08699e397dafd1a2c01763c1"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/4561142c2c753f194478e383d85e3120bffa0fd4",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/4561142c2c753f194478e383d85e3120bffa0fd4",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/4561142c2c753f194478e383d85e3120bffa0fd4",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/4561142c2c753f194478e383d85e3120bffa0fd4/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "9579b167332d66cd75ed9a6c60c9d67cd962d31e",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/9579b167332d66cd75ed9a6c60c9d67cd962d31e",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/9579b167332d66cd75ed9a6c60c9d67cd962d31e"
+      }
+    ]
+  },
+  {
+    "sha": "d7aa4060cce554bae5443ddea7e83c1c4f014718",
+    "node_id": "C_kwDOSoTVOdoAKGQ3YWE0MDYwY2NlNTU0YmFlNTQ0M2RkZWE3ZTgzYzFjNGYwMTQ3MTg",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-08-02T07:55:42Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-08-02T07:55:42Z"
+      },
+      "message": "fix: collect_member_schedules 프롬프트 안내를 구현과 일치시킴\n\n내 일정은 member_names에 \"나\"가 있는지와 무관하게 항상 포함되는데,\n프롬프트는 \"내 일정이 필요하면 '나'를 함께 넣는다\"고 조건부로 안내하고 있었다.\n안내와 실제 동작이 달라 헷갈릴 수 있어 \"내 일정은 항상 포함되므로 외부 조율 대상만\n넣으면 된다\"로 문구를 바꿨다.",
+      "tree": {
+        "sha": "61c49b9b39f1562fa7db9f15e91b1990b96b0a4d",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/61c49b9b39f1562fa7db9f15e91b1990b96b0a4d"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/d7aa4060cce554bae5443ddea7e83c1c4f014718",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/d7aa4060cce554bae5443ddea7e83c1c4f014718",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/d7aa4060cce554bae5443ddea7e83c1c4f014718",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/d7aa4060cce554bae5443ddea7e83c1c4f014718/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "4561142c2c753f194478e383d85e3120bffa0fd4",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/4561142c2c753f194478e383d85e3120bffa0fd4",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/4561142c2c753f194478e383d85e3120bffa0fd4"
+      }
+    ]
+  },
+  {
+    "sha": "89713f9258cba33295939cad05f24bb4e38948a2",
+    "node_id": "C_kwDOSoTVOdoAKDg5NzEzZjkyNThjYmEzMzI5NTkzOWNhZDA1ZjI0YmI0ZTM4OTQ4YTI",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-08-02T07:56:02Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-08-02T07:56:02Z"
+      },
+      "message": "docs: MCP 조회에서 \"나\"를 제외하는 이유를 실제 구조에 맞게 수정\n\n앱이 일정을 저장할 때 sync_personal_schedule_to_shared가 공유 저장소에 \"나\" 복사본을\n만들기 때문에 외부 저장소에도 내 일정이 존재한다.\n\"외부에 없어서 제외한다\"는 기존 주석은 사실과 반대라, 앱 DB에서 이미 읽은 일정과\n중복되는 것을 막기 위해 제외한다는 실제 이유로 고쳤다.",
+      "tree": {
+        "sha": "f76c8797efda585370f0dd8294f8050b38cb68c8",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/f76c8797efda585370f0dd8294f8050b38cb68c8"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/89713f9258cba33295939cad05f24bb4e38948a2",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/89713f9258cba33295939cad05f24bb4e38948a2",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/89713f9258cba33295939cad05f24bb4e38948a2",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/89713f9258cba33295939cad05f24bb4e38948a2/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "d7aa4060cce554bae5443ddea7e83c1c4f014718",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/d7aa4060cce554bae5443ddea7e83c1c4f014718",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/d7aa4060cce554bae5443ddea7e83c1c4f014718"
+      }
+    ]
+  },
+  {
+    "sha": "d3bddd5bbbb1cc347316c8068f500205cc70498c",
+    "node_id": "C_kwDOSoTVOdoAKGQzYmRkZDViYmJiMWNjMzQ3MzE2YzgwNjhmNTAwMjA1Y2M3MDQ5OGM",
+    "commit": {
+      "author": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-08-02T07:56:47Z"
+      },
+      "committer": {
+        "name": "김민규",
+        "email": "kmg@MacBookAir.local",
+        "date": "2026-08-02T07:56:47Z"
+      },
+      "message": "test: 저장 일정과 임시 일정 중복 제거 테스트 추가\n\n파일 설명에는 중복 제거를 확인한다고 적어두었지만 정작 그 경로를 타는 테스트가 없었다.\n저장소를 대체해 실행 환경의 실제 DB에 의존하지 않도록 하고,\n같은 식별자를 가진 임시 일정이 한 번만 남는지 검증한다.\n실행 안내도 실제로 동작하는 명령으로 수정했다.",
+      "tree": {
+        "sha": "1a54d4c89ec1679bfbf228d228b1068c4fcd48cd",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/trees/1a54d4c89ec1679bfbf228d228b1068c4fcd48cd"
+      },
+      "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/git/commits/d3bddd5bbbb1cc347316c8068f500205cc70498c",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/d3bddd5bbbb1cc347316c8068f500205cc70498c",
+    "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/d3bddd5bbbb1cc347316c8068f500205cc70498c",
+    "comments_url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/d3bddd5bbbb1cc347316c8068f500205cc70498c/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "89713f9258cba33295939cad05f24bb4e38948a2",
+        "url": "https://api.github.com/repos/kakaotechcampus-4/pusan-clone/commits/89713f9258cba33295939cad05f24bb4e38948a2",
+        "html_url": "https://github.com/kakaotechcampus-4/pusan-clone/commit/89713f9258cba33295939cad05f24bb4e38948a2"
+      }
+    ]
+  }
+]
